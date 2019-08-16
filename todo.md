@@ -1,0 +1,3 @@
+- learn about service workers
+- add Redux
+- learn about how to make calls correctly (what layers need to be present and should it be done through redux instead?)
