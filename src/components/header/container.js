@@ -1,10 +1,19 @@
 import React from 'react'
 
 class HeaderContainer extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
   render() {
     return (
       <div class='headerContainer'>
-        <p>Hello</p>
+        <ul>
+          {this.props.links.map(link => (
+              <li>{link.displayName}</li>
+          ))}
+        </ul>
       </div>
     )
   }
