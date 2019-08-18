@@ -1,17 +1,17 @@
-export const FETCH_AUTOCOMPLETE_BEGIN   = 'FETCH_AUTOCOMPLETE_BEGIN'
-export const FETCH_AUTOCOMPLETE_SUCCESS = 'FETCH_AUTOCOMPLETE_SUCCESS'
-export const FETCH_AUTOCOMPLETE_FAILURE = 'FETCH_AUTOCOMPLETE_FAILURE'
+export const GET_AUTOCOMPLETE_RECOMMENDATIONS_BEGIN   = 'GET_AUTOCOMPLETE_RECOMMENDATIONS_BEGIN'
+export const GET_AUTOCOMPLETE_RECOMMENDATIONS_SUCCESS = 'GET_AUTOCOMPLETE_RECOMMENDATIONS_SUCCESS'
+export const GET_AUTOCOMPLETE_RECOMMENDATIONS_FAILURE = 'GET_AUTOCOMPLETE_RECOMMENDATIONS_FAILURE'
 
-export const fetchAutocompleteBegin = () => ({
-  type: FETCH_AUTOCOMPLETE_BEGIN
+export const fetchAutocompleteRecommendationsBegin = () => ({
+  type: GET_AUTOCOMPLETE_RECOMMENDATIONS_BEGIN
 })
 
-export const fetchAutocompleteSuccess = autocomplete => ({
-  type: FETCH_AUTOCOMPLETE_SUCCESS,
+export const fetchAutocompleteRecommendationsSuccess = autocomplete => ({
+  type: GET_AUTOCOMPLETE_RECOMMENDATIONS_SUCCESS,
   payload: { autocomplete }
 })
 
-export const fetchAUtoCompleteFailure = error => ({
-  type: FETCH_AUTOCOMPLETE_FAILURE,
+export const fetchAUtoCompleteRecommendationsFailure = error => ({
+  type: GET_AUTOCOMPLETE_RECOMMENDATIONS_FAILURE,
   payload: { error }
 })
