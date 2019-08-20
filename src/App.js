@@ -5,34 +5,31 @@ import { bindActionCreators } from 'redux'
 import './App.css'
 import HeaderContainer from './components/header/container'
 
-import {fetchAutocompleteRecommendations} from './api/autocomplete'
+import {fetchAutocompletePredictions} from './api/autocomplete'
 
 let links = [{displayName: 'Heyy'}]
 
 class App extends React.Component {
   componentWillMount() {
-    const { fetchAutocompleteRecommendations } = this.props;
-    fetchAutocompleteRecommendations();
+    const { fetchAutocompletePredictions } = this.props;
+    fetchAutocompletePredictions();
   }
 
   render() {
-    const { pending, recommendations, error } = this.props
-
     return (
       <div className="App">
         <HeaderContainer links={links} />
-        <p>this.props</p>
+        <p>{this.props.predictions}</p>
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchAutocompleteRecommendations: fetchAutocompleteRecommendations
+  fetchAutocompletePredictions: fetchAutocompletePredictions
 }, dispatch)
 
 export default connect(
