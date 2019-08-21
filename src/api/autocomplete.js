@@ -1,9 +1,8 @@
-
 import axios from 'axios'
 import {
-  getAutocompleteRecommendationsBegin,
-  getAutocompleteRecommendationsSuccess,
-  getAutocompleteRecommendationsFailure
+  getAutocompletePredictionsBegin,
+  getAutocompletePredictionsSuccess,
+  getAutocompletePredictionsFailure
 } from './../actions/autocompleteActions';
 
 const mockedResult = 
@@ -127,10 +126,10 @@ const mockedResult =
     ]
   }
 
-export function getAutocompleteRecommendations() {
+export function getAutocompletePredictions() {
   return dispatch => {
-    dispatch(getAutocompleteRecommendationsBegin());
-    dispatch(getAutocompleteRecommendationsSuccess(mockedResult.predictions))
+    dispatch(getAutocompletePredictionsBegin());
+    dispatch(getAutocompletePredictionsSuccess(mockedResult.predictions))
     return mockedResult.predictions
 
     // axios.get('http://localhost:4000/')

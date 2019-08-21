@@ -8,7 +8,7 @@ class HeaderContainer extends React.Component {
 
   render() {
     return (
-      <div class='headerContainer'>
+      <div className='headerContainer'>
         <ul>
           {this.props.links.map(link => (
               <li>{link.displayName}</li>

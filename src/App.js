@@ -5,34 +5,38 @@ import { bindActionCreators } from 'redux'
 import './App.css'
 import HeaderContainer from './components/header/container'
 
-import { fetchAutocompletePredictions } from './api/autocomplete'
+import { getAutocompletePredictions } from './api/autocomplete'
 
 let links = [{displayName: 'Heyy'}]
 
 class App extends React.Component {
   componentWillMount() {
-    const { fetchAutocompletePredictions } = this.props;
-    fetchAutocompletePredictions();
+    const { getAutocompletePredictions } = this.props;
+    getAutocompletePredictions();
   }
 
   render() {
     return (
       <div className="App">
         <HeaderContainer links={links} />
-        <p>{this.props.predictions}</p>
+        {
+          this.props.autocompletePredictionsLoading ?
+          <p>I'm loading</p> :
+          <p>{this.props.predictions}</p>
+        }
       </div>
     )
   }
 }
 
 const mapStateToProps = state => ({
-  autocompletePredictionsLoading: state.autocompletePredictions.loading,
-  autocompletePredictions: state.autocompletePredictions.result,
-  autocompletePredictionsError: state.autocompletePredictions.error
+  autocompletePredictionsLoading: state.autocomplete.getIn(['autocompletePredictions', 'loading']),
+  autocompletePredictions: state.autocomplete.getIn(['autocompletePredictions', 'result']),
+  autocompletePredictionsError: state.autocomplete.getIn(['autocompletePredictions', 'error'])
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  fetchAutocompletePredictions: fetchAutocompletePredictions
+  getAutocompletePredictions: getAutocompletePredictions
 }, dispatch)
 
 export default connect(

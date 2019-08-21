@@ -2,16 +2,16 @@ export const GET_AUTOCOMPLETE_PREDICTIONS_BEGIN   = 'GET_AUTOCOMPLETE_PREDICTION
 export const GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS = 'GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS'
 export const GET_AUTOCOMPLETE_PREDICTIONS_FAILURE = 'GET_AUTOCOMPLETE_PREDICTIONS_FAILURE'
 
-export const fetchAutocompletePredictionsBegin = () => ({
+export const getAutocompletePredictionsBegin = () => ({
   type: GET_AUTOCOMPLETE_PREDICTIONS_BEGIN
 })
 
-export const fetchAutocompletePredictionsSuccess = autocomplete => ({
+export const getAutocompletePredictionsSuccess = predictions => ({
   type: GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS,
-  payload: { autocomplete }
+  payload: { predictions }
 })
 
-export const fetchAUtoCompletePredictionsFailure = error => ({
+export const getAutoCompletePredictionsFailure = error => ({
   type: GET_AUTOCOMPLETE_PREDICTIONS_FAILURE,
   payload: { error }
 })

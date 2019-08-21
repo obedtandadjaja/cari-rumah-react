@@ -1,14 +1,17 @@
+import { Map, List } from 'immutable'
 import {
   GET_AUTOCOMPLETE_PREDICTIONS_BEGIN,
   GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS,
   GET_AUTOCOMPLETE_PREDICTIONS_FAILURE
 } from './../actions/autocompleteActions';
 
-const initialState = {
-  predictions: [],
-  loading: false,
-  error: null
-};
+const initialState = Map({
+  autocompletePredictions: Map({
+    result: List([]),
+    loading: false,
+    error: null
+  })
+})
 
 export default function autocompletePredictionsReducer(state=initialState, action) {
   switch(action.type) {
@@ -23,7 +26,7 @@ export default function autocompletePredictionsReducer(state=initialState, actio
       return state.merge({
         autocompletePredictions: {
           loading: false,
-          result: action.payload.autocomplete
+          result: action.payload.predictions
         }
       })
 
