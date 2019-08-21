@@ -23,7 +23,7 @@ export default function autocompletePredictionsReducer(state=initialState, actio
       return state.merge({
         autocompletePredictions: {
           loading: false,
-          predictions: action.payload.autocomplete
+          result: action.payload.autocomplete
         }
       })
 
@@ -32,7 +32,7 @@ export default function autocompletePredictionsReducer(state=initialState, actio
         autocompletePredictions: {
           loading: false,
           error: action.payload.error,
-          predictions: []
+          result: []
         }
       })
 
