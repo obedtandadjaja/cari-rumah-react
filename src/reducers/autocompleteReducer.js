@@ -13,26 +13,28 @@ const initialState = {
 export default function autocompletePredictionsReducer(state=initialState, action) {
   switch(action.type) {
     case GET_AUTOCOMPLETE_PREDICTIONS_BEGIN:
-      return {
-        ...state,
-        loading: true,
-        error: null
-      }
+      return state.merge({
+        autocompletePredictions: {
+          loading: true
+        }
+      })
 
     case GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS:
-      return {
-        ...state,
-        loading: false,
-        predictions: action.payload.autocomplete
-      }
+      return state.merge({
+        autocompletePredictions: {
+          loading: false,
+          predictions: action.payload.autocomplete
+        }
+      })
 
     case GET_AUTOCOMPLETE_PREDICTIONS_FAILURE:
-      return {
-        ...state,
-        loading: false,
-        error: action.payload.error,
-        predictions: []
-      }
+      return state.merge({
+        autocompletePredictions: {
+          loading: false,
+          error: action.payload.error,
+          predictions: []
+        }
+      })
 
     default:
       return state
