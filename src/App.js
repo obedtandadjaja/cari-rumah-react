@@ -22,7 +22,7 @@ class App extends React.Component {
         {
           this.props.autocompletePredictionsLoading ?
           <p>I'm loading</p> :
-          <p>{this.props.autocompletePredictions}</p>
+          {this.props.autocompletePredictions}
         }
       </div>
     )
