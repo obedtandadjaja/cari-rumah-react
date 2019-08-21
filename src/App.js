@@ -7,12 +7,12 @@ import HeaderContainer from './components/header/container'
 
 import { getAutocompletePredictions } from './api/autocomplete'
 
-let links = [{displayName: 'Heyy'}]
+let links = [{displayName: 'Option 1'}]
 
 class App extends React.Component {
   componentWillMount() {
     const { getAutocompletePredictions } = this.props;
-    getAutocompletePredictions();
+    getAutocompletePredictions('Jakarta');
   }
 
   render() {
@@ -22,7 +22,7 @@ class App extends React.Component {
         {
           this.props.autocompletePredictionsLoading ?
           <p>I'm loading</p> :
-          <p>{this.props.predictions}</p>
+          <p>{this.props.autocompletePredictions}</p>
         }
       </div>
     )

@@ -11,7 +11,7 @@ export const getAutocompletePredictionsSuccess = predictions => ({
   payload: { predictions }
 })
 
-export const getAutoCompletePredictionsFailure = error => ({
+export const getAutocompletePredictionsFailure = error => ({
   type: GET_AUTOCOMPLETE_PREDICTIONS_FAILURE,
   payload: { error }
 })
