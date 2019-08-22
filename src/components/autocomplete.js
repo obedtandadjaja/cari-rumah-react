@@ -33,8 +33,11 @@ class Autocomplete extends React.Component {
 
   render() {
     return (
-      <input type='text' placeholder='Enter an address, neighborhood, city, or ZIP code'
-        onChange={this.onChange} />
+      <div>
+        <input type='text' placeholder='Enter an address, neighborhood, city, or ZIP code'
+          onChange={this.onChange} />
+        <p>{ this.props.autocompletePredictionsLoading ? "I'm loading please wait" : "I'm ready" }</p>
+      </div>
     )
   }
 }
