@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import './App.css'
 import HeaderContainer from './components/header/container'
-import Autocomplete from './components/autocomplete'
+import Autocomplete from './components/autocomplete/autocomplete'
 
 let links = []
 

@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import './autocomplete.css'
-import { getAutocompletePredictions } from './../api/autocomplete'
+import { getAutocompletePredictions } from './../../api/autocomplete'
+import PredictionsContainer from './predictions/container'
 
 class Autocomplete extends React.Component {
   state = {
@@ -14,7 +15,7 @@ class Autocomplete extends React.Component {
 
   onChange = (event) => {
     if (this.state.typingTimeout) {
-      clearTimeout(this.state.typingTimeout);
+      clearTimeout(this.state.typingTimeout)
     }
 
     this.setState({
@@ -25,13 +26,13 @@ class Autocomplete extends React.Component {
           this.props.getAutocompletePredictions(this.state.text)
         }
       }, 400)
-    });
+    })
   }
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.onChange = this.onChange.bind(this);
+    this.onChange = this.onChange.bind(this)
   }
 
   render() {
@@ -40,6 +41,11 @@ class Autocomplete extends React.Component {
         <input className='autocomplete' type='text' placeholder='Enter an address, neighborhood, city, or ZIP code'
           onChange={this.onChange} />
         <p>{ this.props.autocompletePredictionsLoading ? "I'm loading please wait" : "I'm ready" }</p>
+        {
+          !this.props.autocompletePredictionsLoading &&
+          !this.props.autocompletePredictionsError &&
+          <PredictionsContainer predictions={this.props.autocompletePredictions} />
+        }
       </div>
     )
   }
