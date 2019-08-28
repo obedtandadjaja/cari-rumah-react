@@ -6,7 +6,7 @@ import './App.css'
 import HeaderContainer from './components/header/container'
 import Autocomplete from './components/autocomplete'
 
-let links = [{displayName: 'Option 1'}]
+let links = []
 
 class App extends React.Component {
   componentWillMount() {}
@@ -15,7 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <HeaderContainer links={links} />
-        <Autocomplete />
+        <Autocomplete className='autocompleteContainer' />
       </div>
     )
   }

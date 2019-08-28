@@ -1,7 +1,17 @@
-.App {
-  text-align: left;
+html, body, #root, .App {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
