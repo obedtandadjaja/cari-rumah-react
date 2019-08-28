@@ -5,10 +5,10 @@ import PredictionItem from './item'
 class PredictionsList extends React.Component {
   render() {
     return (
-      <ul class='predictionsList'>
+      <ul className='predictionsList'>
         {
-          this.props.predictions.map(prediction => (
-              <li><PredictionItem prediction={prediction} /></li>
+          this.props.predictions.map((prediction, i) => (
+            <li key={i}><PredictionItem prediction={prediction} /></li>
           ))
         }
       </ul>

@@ -40,7 +40,6 @@ class Autocomplete extends React.Component {
       <div>
         <input className='autocomplete' type='text' placeholder='Enter an address, neighborhood, city, or ZIP code'
           onChange={this.onChange} />
-        <p>{ this.props.autocompletePredictionsLoading ? "I'm loading please wait" : "I'm ready" }</p>
         {
           !this.props.autocompletePredictionsLoading &&
           !this.props.autocompletePredictionsError &&
