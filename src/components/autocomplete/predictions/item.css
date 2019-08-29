@@ -1,0 +1,20 @@
+.predictionItem {
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: calc(100% - 40px);
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px 0px;
+    overflow: hidden;
+}
+
+span {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-transform: none;
+    color: rgb(10, 10, 20);
+    margin: 0px;
+}

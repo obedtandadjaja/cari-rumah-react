@@ -1,5 +1,6 @@
 import React from 'react'
 
+import './container.css'
 import PredictionsList from './list'
 
 class PredictionsContainer extends React.Component {

@@ -1,0 +1,18 @@
+ul.predictionsList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+li {
+    cursor: pointer;
+    color: rgb(167, 166, 171);
+    display: block;
+    height: 100%;
+    padding: 0px 24px;
+}
+
+li:hover {
+    background-color: rgb(241, 241, 244);
+}
