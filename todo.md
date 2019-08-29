@@ -1,9 +1,6 @@
-- learn about service workers
-- add Redux
-- learn about how to make calls correctly (what layers need to be present and should it be done through redux instead?)
-- learn proper react directory
+- Separate header and app body
+- Have app to just be parent of header app body and footer
 
 Implementation:
-- Add the typeahead search as a search bar
 - GoogleMaps with plots
   - Upon click, show panel with details about the listing
