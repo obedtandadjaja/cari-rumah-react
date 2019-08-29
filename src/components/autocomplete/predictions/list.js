@@ -9,7 +9,9 @@ class PredictionsList extends React.Component {
       <ul className='predictionsList'>
         {
           this.props.predictions.map((prediction, i) => (
-            <li key={i}><PredictionItem prediction={prediction} /></li>
+            <li className='predictionsListLi' key={i}>
+              <PredictionItem prediction={prediction} />
+            </li>
           ))
         }
       </ul>

@@ -1,0 +1,19 @@
+header {
+    height: 80px;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 100%;
+    position: static;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    border: none;
+    padding-right: 24px;
+    overflow: visible;
+}

@@ -1,0 +1,14 @@
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    height: 100%;
+    position: static;
+    width: 100%;
+    max-width: 1280px;
+    margin: auto;
+    border: none;
+    padding-right: 24px;
+    z-index: 1;
+    overflow: hidden;
+}

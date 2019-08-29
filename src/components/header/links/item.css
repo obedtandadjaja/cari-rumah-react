@@ -1,0 +1,24 @@
+.link {
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 13px;
+    padding-bottom: 12px;
+    border: none;
+    margin: auto;
+    font-size: 14px;
+    position: relative;
+    color: #2a2a33;
+    flex: 1 0 50%;
+    line-height: 28px;
+    cursor: pointer;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.link:visited {
+    color: #7A48D6;
+}
+
+.link:hover {
+    color: #006AFF;
+}

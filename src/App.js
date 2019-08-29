@@ -3,10 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import './App.css'
-import HeaderContainer from './components/header/container'
+import Header from './components/header/header'
 import Autocomplete from './components/autocomplete/autocomplete'
-
-let links = []
 
 class App extends React.Component {
   componentWillMount() {}
@@ -14,7 +12,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <HeaderContainer links={links} />
+        <Header />
         <Autocomplete className='autocompleteContainer' />
       </div>
     )
