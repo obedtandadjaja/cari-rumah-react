@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import './App.css'
 import Header from './components/header/header'
+import BackgroundImage from './components/backgroundImage'
 import Autocomplete from './components/autocomplete/autocomplete'
 
 class App extends React.Component {
@@ -14,6 +15,7 @@ class App extends React.Component {
       <div className='App'>
         <Header />
         <div className='AppBody'>
+          <BackgroundImage backgroundImage={'http://c1.peakpx.com/wallpaper/551/3/749/architecture-family-house-front-yard-wallpaper-preview.jpg'} />
           <Autocomplete className='autocompleteContainer' />
         </div>
       </div>

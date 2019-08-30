@@ -6,7 +6,7 @@ import LinkList from './list'
 class HeaderContainer extends React.Component {
   render() {
     return (
-      <div class='linksContainer'>
+      <div className='linksContainer'>
         <LinkList links={this.props.links} />
       </div>
     )

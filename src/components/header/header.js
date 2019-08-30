@@ -20,6 +20,10 @@ const userLinks = [
   },
   {
     url: '#',
+    text: 'Advertise'
+  },
+  {
+    url: '#',
     text: 'Akun'
   }
 ]
