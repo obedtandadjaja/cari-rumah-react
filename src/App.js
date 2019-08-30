@@ -16,7 +16,10 @@ class App extends React.Component {
         <Header />
         <div className='AppBody'>
           <BackgroundImage backgroundImage={'http://c1.peakpx.com/wallpaper/551/3/749/architecture-family-house-front-yard-wallpaper-preview.jpg'} />
-          <Autocomplete className='autocompleteContainer' />
+          <div className='bodyContent'>
+            <h1>Nyari tempat tinggal dibuat gampang</h1>
+            <Autocomplete className='autocompleteContainer' />
+          </div>
         </div>
       </div>
     )

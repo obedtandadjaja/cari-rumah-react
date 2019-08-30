@@ -14,3 +14,13 @@ html, body, #root, .App {
     justify-content: center;
     align-items: center;
 }
+
+.bodyContent {
+    padding: 10vh 0;
+    color: #fff;
+}
+
+.bodyContent > h1 {
+    text-align: center;
+    text-shadow: -1px 0 #2a2a33, 0 1px #2a2a33, 1px 0 #2a2a33, 0 -1px #2a2a33;
+}
