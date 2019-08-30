@@ -1,0 +1,12 @@
+ul.headerLinksList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li.headerLinksListLi {
+    min-height: 53px;
+    display: inline-block;
+    line-height: 80px;
+    flex-wrap: wrap;
+}

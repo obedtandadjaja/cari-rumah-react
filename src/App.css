@@ -4,13 +4,11 @@ html, body, #root, .App {
     margin: 0;
     padding: 0;
     display: inline-block;
+    font-family: "Open Sans",Gotham,gotham,Tahoma,Geneva,sans-serif;
+    font-size: 93.75%;
 }
 
-.App-link {
-    color: #61dafb;
-}
-
-.App {
+.AppBody {
     display: flex;
     justify-content: center;
     align-items: center;

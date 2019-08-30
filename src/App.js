@@ -11,9 +11,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <Header />
-        <Autocomplete className='autocompleteContainer' />
+        <div className='AppBody'>
+          <Autocomplete className='autocompleteContainer' />
+        </div>
       </div>
     )
   }

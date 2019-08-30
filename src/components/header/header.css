@@ -17,3 +17,11 @@ header {
     padding-right: 24px;
     overflow: visible;
 }
+
+h1.temporaryTitle {
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
