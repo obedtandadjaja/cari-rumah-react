@@ -1,5 +1,6 @@
-- Separate header and app body
-- Have app to just be parent of header app body and footer
+- Learn about Relay
+- Implement Relay
+- Build out maps and listing feature
 
 Implementation:
 - GoogleMaps with plots
