@@ -44,6 +44,7 @@ class Autocomplete extends React.Component {
         {
           !this.props.autocompletePredictionsLoading &&
           !this.props.autocompletePredictionsError &&
+          this.state.text &&
           <PredictionsContainer predictions={this.props.autocompletePredictions} />
         }
       </div>
