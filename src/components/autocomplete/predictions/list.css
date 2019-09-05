@@ -3,6 +3,7 @@ ul.predictionsList {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    text-align: left;
 }
 
 li.predictionsListLi {

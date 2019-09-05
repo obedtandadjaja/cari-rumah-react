@@ -1,6 +1,6 @@
 input.autocomplete {
     display: inline-block;
-    width: 640px;
+    max-width: 640px;
     padding-top: 22px;
     padding-bottom: 22px;
     padding-left: 24px;

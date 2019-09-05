@@ -40,6 +40,7 @@ class Autocomplete extends React.Component {
       <div>
         <input className='autocomplete' type='text' placeholder='Cari alamat, daerah, kota, atau kode ZIP'
           onChange={this.onChange} />
+        <br />
         {
           !this.props.autocompletePredictionsLoading &&
           !this.props.autocompletePredictionsError &&
