@@ -1,16 +1,23 @@
-html, body, #root, .App {
+html, body, #root {
     height: 100%;
     width: 100%;
     margin: 0;
     padding: 0;
-    display: inline-block;
     font-family: "Open Sans",Gotham,gotham,Tahoma,Geneva,sans-serif;
     font-size: 93.75%;
     overflow: hidden;
 }
 
-.AppBody {
+.App {
+    height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column;
+}
+
+header {
+    flex: 0 1 auto;
+}
+
+.AppBody {
+    flex: 1 1 auto;
 }

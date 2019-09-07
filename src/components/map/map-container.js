@@ -13,7 +13,6 @@ class MapContainer extends React.Component {
   }
 
   render() {
-    console.log(process.env)
     return (
       <div className='mapContainer'>
         <GoogleMapReact
