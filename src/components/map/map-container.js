@@ -17,9 +17,14 @@ class MapContainer extends React.Component {
     return (
       <div className='mapContainer'>
         <GoogleMapReact
-          bootstrapURLKeys={{key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY}}
+          bootstrapURLKeys={{
+            key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+            language: 'id',
+            region: 'ind'
+          }}
           defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom} />
+          defaultZoom={this.props.zoom}
+        />
       </div>
     )
   }
