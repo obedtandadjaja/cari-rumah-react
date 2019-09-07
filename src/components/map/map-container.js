@@ -6,10 +6,10 @@ import './map-container.css'
 class MapContainer extends React.Component {
   static defaultProps = {
     center: {
-      lat: 6.2088,
-      lng: 106.8456
+      lat: -6.187951,
+      lng: 106.733967
     },
-    zoom: 11
+    zoom: 13
   }
 
   render() {
