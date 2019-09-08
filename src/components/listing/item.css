@@ -1,0 +1,50 @@
+.listingItem {
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.15);
+    border-radius: 4px;
+    border-width: 1px;
+    border-color: #f5f5f5;
+    border-collapse: separate;
+    background-color: #fff;
+}
+
+.listingItem:hover {
+    border-color: #ccc;
+    box-shadow: 0 0 7px 0 rgba(0,0,0,.35);
+}
+
+.listingItemPicture {
+    width: 312px;
+    height: 202px;
+    background-size: cover;
+    background-position: center center;
+}
+
+.listingItemBody {
+    padding: 10px;
+}
+
+.listingItemStatsContainer {
+    display: flex;
+    flex-flow: row;
+    align-content: flex-start wrap;
+}
+
+.listingItemBody span {
+    font: inherit;
+    font-size: 12px;
+    padding: 5px 0 5px 0;
+}
+
+span.listingItemStatsItem:first-child {
+    padding-left: 0px;
+}
+
+span.listingItemStatsItem {
+    padding-left: 10px;
+}
+
+span.listingItemPrice {
+    font-size: 1.125rem;
+    color: #333;
+    font-weight: 600;
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react';
 
-import './map-container.css'
+import './container.css'
 
 class MapContainer extends React.Component {
   static defaultProps = {
