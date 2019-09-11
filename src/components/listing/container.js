@@ -32,7 +32,7 @@ class ListingContainer extends React.Component {
     return(
       <div className='listingContainer'>
         <div className='listingContainerResultsCounter'>
-          Menunjukkan {this.state.batchSize < listings.length ? this.state.batchSize : listings.length} dari {listings.length} listings
+          Menunjukkan {this.state.batchSize < listings.length ? this.state.batchSize : listings.length} dari {listings.length} listing
         </div>
         {
           listings.map(listing => {
