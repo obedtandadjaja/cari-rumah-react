@@ -1,49 +1,61 @@
 import React from 'react'
+import { QueryRenderer, graphql } from 'react-relay'
 
 import './container.css'
 import ListingItem from './item'
-
-const listings = [
-  {
-    type: 'Apartment',
-    num_bedrooms: 2,
-    num_bathrooms: 1,
-    num_parking_spots: 1,
-    price_cents: 12000000000,
-    price_currency: 'IDR',
-    display_picture: 'https://ssl.cdn-redfin.com/system_files/media/339690_JPG/genDesktopMapHomeCardUrl/item_40.jpg',
-    address: {
-      address_1: 'Jl. Pulau Pramuka 1 Blok P1/49, Taman Permata Buana',
-      city: 'Jakarta',
-      region: 'DKI Jakarta',
-      zip_code: '11610',
-      latitude: -6.187951,
-      longitude: 106.733967
-    }
-  }
-]
+import environment from './../../create-relay-environment'
 
 class ListingContainer extends React.Component {
   state = {
     batchSize: 20
   }
 
-  render() {
-    return(
-      <div className='listingContainer'>
-        <div className='listingContainerResultsCounter'>
-          Menunjukkan {this.state.batchSize < listings.length ? this.state.batchSize : listings.length} dari {listings.length} listing
+  renderQuery = (error, props) => {
+    if (error) {
+      return (<div className='listingContainer'></div>)
+    } else if (props) {
+      return (
+        <div className='listingContainer'>
+          <div className='listingContainerResultsCounter'>
+          Menunjukkan {this.state.batchSize < props.addressesByLongLatDistance.length ? this.state.batchSize : props.addressesByLongLatDistance.length} dari {props.addressesByLongLatDistance.length}
         </div>
-        {
-          listings.map(listing => {
-            return (
-              <ListingItem listing={listing} />
-            )
-          })
-        }
-      </div>
+          {
+            props.addressesByLongLatDistance.map(listing => {
+              return (
+                  <ListingItem listing={listing} />
+              )
+            })
+          }
+        </div>
+      )
+    }
+  }
+
+  render() {
+    return (
+      <QueryRenderer
+      environment={environment}
+      query={
+        graphql`
+          query containerAddressesByLongLatDistanceQuery($lat: Float, $long: Float, $distance: Float) {
+            addressesByLongLatDistance(lat: $lat, long: $long, distance: $distance) {
+              address_1
+              address_2
+              city
+              region
+              zip_code
+              latitude
+              longitude
+            }
+          }
+        `
+      }
+      variables={{lat: 34.0409301, long: -118.2574062, distance: 10}}
+      render={this.renderQuery}
+      />
     )
   }
+
 }
 
 export default ListingContainer
