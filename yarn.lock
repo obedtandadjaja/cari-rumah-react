@@ -2,6 +2,55 @@
 # yarn lockfile v1
 
 
+"@apollo/react-common@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-common/-/react-common-3.1.1.tgz#540619d8276d750ce4f381c9cf8f51a6f657f75d"
+  integrity sha512-lMiczOm4sD16eI9Ai+AUY+Jl3C/FNm4IpoZiAbe35TqMuD7HpZ4OJmXAbT3CzfrAqsKK8+rHgRvTiPI2kQjIWg==
+  dependencies:
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-components@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-components/-/react-components-3.1.1.tgz#dde560f0296318d230a5e73b9b450a881baace29"
+  integrity sha512-ozoq3XkHZKXrLQUOTZlbbPg9SvZryPQCRhTl+WJZu75ysaAKbwl6iVt+emBymZ5/eNXSUSdxqnOCX281sFLRRw==
+  dependencies:
+    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-hooks" "^3.1.1"
+    prop-types "^15.7.2"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-hoc@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-hoc/-/react-hoc-3.1.1.tgz#e02ee62792924a13b8e4e023899fdb74333060f8"
+  integrity sha512-j6ITPSFmZnaw+tWzjqh25Ib2jBzOPpyBFsh1u0Ep4oJWFhCHwGLFAns0I6aAWP8a+3R0P7ZarwEVy56ylKG58w==
+  dependencies:
+    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-components" "^3.1.1"
+    hoist-non-react-statics "^3.3.0"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-hooks@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-hooks/-/react-hooks-3.1.1.tgz#8e5a0f281a9778aaf17496ad38a178d23375077c"
+  integrity sha512-LwE4olNlKwqh1hl6iHr/igSDGRVs7c6Ik5MYZm9TzGj01f+ebhM1+Pn+UBNLsb3uRuytZsUOsEDBEXMABzC9Tw==
+  dependencies:
+    "@apollo/react-common" "^3.1.1"
+    "@wry/equality" "^0.1.9"
+    ts-invariant "^0.4.4"
+    tslib "^1.10.0"
+
+"@apollo/react-ssr@^3.1.1":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@apollo/react-ssr/-/react-ssr-3.1.1.tgz#4952c02c4131334edaaa4af1c2668801ac656471"
+  integrity sha512-Jbh3bpkqmp5k5KGZNcKgpGiChlUB3kVkFxzuqC4Tzx5u1gg47dPuS950j3LeMLD6ZRFhwryMnMtBsLu8iceE/Q==
+  dependencies:
+    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-hooks" "^3.1.1"
+    tslib "^1.10.0"
+
 "@babel/code-frame@7.5.5", "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.5.5":
   version "7.5.5"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.5.5.tgz#bc0782f6d69f7b7d49531219699b988f669a8f9d"
@@ -1394,6 +1443,13 @@
     "@webassemblyjs/ast" "1.8.5"
     "@webassemblyjs/wast-parser" "1.8.5"
     "@xtuc/long" "4.2.2"
+
+"@wry/equality@^0.1.9":
+  version "0.1.9"
+  resolved "https://registry.yarnpkg.com/@wry/equality/-/equality-0.1.9.tgz#b13e18b7a8053c6858aa6c85b54911fb31e3a909"
+  integrity sha512-mB6ceGjpMGz1ZTza8HYnrPGos2mC6So4NhS1PtZ8s4Qt0K7fBiIGhpSxUbQmhwcSWE3no+bYxmI2OL6KuXYmoQ==
+  dependencies:
+    tslib "^1.9.3"
 
 "@xtuc/ieee754@^1.2.0":
   version "1.2.0"
@@ -4428,13 +4484,6 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.1.tgz#1c1f0c364882c868f5bff6512146328336a11b1d"
   integrity sha512-b9usnbDGnD928gJB3LrCmxoibr3VE4U2SMo5PBuBnokWyDADTqDPXg4YpwKF1trpH+UbGp7QLicO3+aWEy0+mw==
-
-graphql-relay@^0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/graphql-relay/-/graphql-relay-0.6.0.tgz#18ec36b772cfcb3dbb9bd369c3f8004cf42c7b93"
-  integrity sha512-OVDi6C9/qOT542Q3KxZdXja3NrDvqzbihn1B44PH8P/c5s0Q90RyQwT6guhGqXqbYEH6zbeLJWjQqiYvcg2vVw==
-  dependencies:
-    prettier "^1.16.0"
 
 graphql@^14.0.2, graphql@^14.5.4:
   version "14.5.4"
@@ -7929,11 +7978,6 @@ prelude-ls@~1.1.2:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier@^1.16.0:
-  version "1.18.2"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.18.2.tgz#6823e7c5900017b4bd3acf46fe9ac4b4d7bda9ea"
-  integrity sha512-OeHeMc0JhFE9idD4ZdtNibzY0+TPHSpSSb9h8FqtP+YnoZZ1sl8Vc9b1sasjfymH3SonAF4QcA2+mzHPhMvIiw==
-
 pretty-bytes@^5.1.0:
   version "5.3.0"
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.3.0.tgz#f2849e27db79fb4d6cfe24764fc4134f165989f2"
@@ -8165,6 +8209,17 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-apollo@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-apollo/-/react-apollo-3.1.1.tgz#64194f700967bd89ebed964d7a60d82cbc054a8d"
+  integrity sha512-ocqpnCv/wu1a5szkUl5k8qdmMMcUgKQHGpdh3MZYxKWwpXqgs4PDtDHHiIYLVnO5TrQdGxK4jxLWfyawhV0nmA==
+  dependencies:
+    "@apollo/react-common" "^3.1.1"
+    "@apollo/react-components" "^3.1.1"
+    "@apollo/react-hoc" "^3.1.1"
+    "@apollo/react-hooks" "^3.1.1"
+    "@apollo/react-ssr" "^3.1.1"
+
 react-app-polyfill@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-1.0.2.tgz#2a51175885c88245a2a356dc46df29f38ec9f060"
@@ -8239,16 +8294,6 @@ react-redux@^7.1.0-rc.1:
     loose-envify "^1.4.0"
     prop-types "^15.7.2"
     react-is "^16.8.6"
-
-react-relay@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/react-relay/-/react-relay-5.0.0.tgz#66af68e8e5fad05879a3f21f895a0296ef2741a8"
-  integrity sha512-gpUvedaCaPVPT0nMrTbev2TzrU0atgq2j/zAnGHiR9WgqRXwtHsK6FWFN65HRbopO2DzuJx9VZ2I3VO6uL5EMA==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-    fbjs "^1.0.0"
-    nullthrows "^1.1.0"
-    relay-runtime "5.0.0"
 
 react-router-dom@^5.0.1:
   version "5.0.1"
@@ -9677,12 +9722,19 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
+ts-invariant@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/ts-invariant/-/ts-invariant-0.4.4.tgz#97a523518688f93aafad01b0e80eb803eb2abd86"
+  integrity sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA==
+  dependencies:
+    tslib "^1.9.3"
+
 ts-pnp@1.1.2, ts-pnp@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/ts-pnp/-/ts-pnp-1.1.2.tgz#be8e4bfce5d00f0f58e0666a82260c34a57af552"
   integrity sha512-f5Knjh7XCyRIzoC/z1Su1yLLRrPrFCgtUAh/9fCSP6NKbATwpOL1+idQVXQokK9GRFURn/jYPGPfegIctwunoA==
 
-tslib@^1.8.1, tslib@^1.9.0:
+tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.10.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.10.0.tgz#c3c19f95973fb0a62973fb09d90d961ee43e5c8a"
   integrity sha512-qOebF53frne81cf0S9B41ByenJ3/IuH8yJKngAX35CmiZySA0khhkovshKK+jGCaMnVomla7gVlIcc3EvKPbTQ==
