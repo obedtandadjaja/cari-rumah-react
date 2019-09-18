@@ -1,7 +1,13 @@
-import { ApolloClient } from 'react-apollo'
+import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-boost'
+
+const cache = new InMemoryCache();
+const link = new HttpLink({
+  uri: process.env.REACT_APP_APOLLO_SERVER_HOST
+})
 
 const apolloClient = new ApolloClient({
-  uri: process.env.REACT_APP_APOLLO_SERVER_HOST
+  cache,
+  link
 })
 
 export default apolloClient
