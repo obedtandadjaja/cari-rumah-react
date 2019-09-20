@@ -33,9 +33,9 @@ function ListingContainer({ lat, long, distance }) {
     return (
       <div className='listingContainer'>
         <div className='listingContainerResultsCounter'>
-          Menunjukkan {data.listingsByLatLongDistance.length} dari {data.listingsByLatLongDistance.length}
+          Menunjukkan {data.listingsByAddressLatLongDistance.length} dari {data.listingsByAddressLatLongDistance.length}
         </div>
-        <ListingList listings={data.listingsByLatLongDistance} />
+        <ListingList listings={data.listingsByAddressLatLongDistance} />
       </div>
     )
   }
