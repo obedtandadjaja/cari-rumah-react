@@ -1,26 +1,41 @@
 import React from 'react'
+import { useQuery } from 'react-apollo'
+import gql from 'graphql-tag'
 
 import './container.css'
-import ListingItem from './item'
+import ListingList from './list'
 
-class ListingContainer extends React.Component {
-  state = {
-    batchSize: 20
+const QUERY = gql`
+  query listings($lat: Float!, $long: Float!, $distance: Float!) {
+    listingsByLatLongDistance(lat: $lat, long: $long, distance: $distance) {
+      id
+      num_bedrooms
+      num_bathrooms
+      lot_size_m2
+      price_idr
+      residential_type
+      type
+      address {
+        full_address
+      }
+    }
   }
+`
 
-  render() {
+function ListingContainer({ lat, long, distance }) {
+  const { loading, error, data } = useQuery(QUERY, { variables: { lat, long, distance }})
+
+  if (loading) {
+    return(<p>Loading...</p>)
+  } else if (error) {
+    return(<p>{error}</p>)
+  } else {
     return (
       <div className='listingContainer'>
         <div className='listingContainerResultsCounter'>
-          Menunjukkan {this.state.batchSize < this.props.listings.length ? this.state.batchSize : this.props.listings.length} dari {this.props.listings.length}
+          Menunjukkan {data.listingsByLatLongDistance.length} dari {data.listingsByLatLongDistance.length}
         </div>
-        {
-          this.props.listings.map(listing => {
-            return (
-                <ListingItem listing={listing} />
-            )
-          })
-        }
+        <ListingList listings={data.listingsByLatLongDistance} />
       </div>
     )
   }

@@ -9,7 +9,13 @@ class SearchContainer extends React.Component {
     return (
       <div className='searchContainer'>
         <MapContainer />
-        <ListingContainer />
+        {
+          ListingContainer({
+            lat: 0,
+            long: 0,
+            distance: 5
+          })
+        }
       </div>
     )
   }
