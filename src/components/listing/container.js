@@ -7,7 +7,7 @@ import ListingList from './list'
 
 const QUERY = gql`
   query listings($lat: Float!, $long: Float!, $distance: Float!) {
-    listingsByLatLongDistance(lat: $lat, long: $long, distance: $distance) {
+    listingsByAddressLatLongDistance(lat: $lat, long: $long, distance: $distance) {
       id
       num_bedrooms
       num_bathrooms
