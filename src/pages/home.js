@@ -4,7 +4,7 @@ import './home.css'
 import BackgroundImage from './../components/backgroundImage'
 import Autocomplete from './../components/autocomplete/autocomplete'
 
-class HomeContainer extends React.Component {
+class Home extends React.Component {
   render() {
     return (
         <div className='homeContainer'>
@@ -16,4 +16,4 @@ class HomeContainer extends React.Component {
   }
 }
 
-export default HomeContainer
+export default Home

@@ -28,7 +28,7 @@ function ListingContainer({ lat, long, distance }) {
   if (loading) {
     return(<p>Loading...</p>)
   } else if (error) {
-    return(<p>{error}</p>)
+    return(<p>{JSON.stringify(error)}</p>)
   } else {
     return (
       <div className='listingContainer'>
