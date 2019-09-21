@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
+import { PropagateLoader } from 'react-spinners'
 
 import './container.css'
 import ListingList from './list'
@@ -25,20 +26,27 @@ const QUERY = gql`
 function ListingContainer({ lat, long, distance }) {
   const { loading, error, data } = useQuery(QUERY, { variables: { lat, long, distance }})
 
+  let body = null
   if (loading) {
-    return(<p>Loading...</p>)
+    body = (<PropagateLoader loading={true} />)
   } else if (error) {
-    return(<p>{JSON.stringify(error)}</p>)
+    body = (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
   } else {
     return (
-      <div className='listingContainer'>
+      <>
         <div className='listingContainerResultsCounter'>
           Menunjukkan {data.listingsByAddressLatLongDistance.length} dari {data.listingsByAddressLatLongDistance.length}
         </div>
         <ListingList listings={data.listingsByAddressLatLongDistance} />
-      </div>
+      </>
     )
   }
+
+  return (
+    <div className='listingContainer'>
+      { body }
+    </div>
+  )
 }
 
 export default ListingContainer
