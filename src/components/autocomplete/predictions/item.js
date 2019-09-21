@@ -15,7 +15,7 @@ class PredictionItem extends React.Component {
               hash: '',
               state: {}
             }} />
-          {/* {this.props.prediction.description} */}
+          {this.props.prediction.description}
         </span>
       </div>
     )
