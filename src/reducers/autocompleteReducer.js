@@ -3,7 +3,7 @@ import {
   GET_AUTOCOMPLETE_PREDICTIONS_BEGIN,
   GET_AUTOCOMPLETE_PREDICTIONS_SUCCESS,
   GET_AUTOCOMPLETE_PREDICTIONS_FAILURE
-} from './../actions/autocompleteActions';
+} from './../actions/autocompleteActions'
 
 const initialState = Map({
   autocompletePredictions: Map({
@@ -14,7 +14,7 @@ const initialState = Map({
 })
 
 export default function autocompletePredictionsReducer(state=initialState, action) {
-  switch(action.type) {
+  switch (action.type) {
     case GET_AUTOCOMPLETE_PREDICTIONS_BEGIN:
       return state.merge({
         autocompletePredictions: {
