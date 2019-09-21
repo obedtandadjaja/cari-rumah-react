@@ -10,7 +10,7 @@ export function getPlaceGeometry(place_id) {
 
   return dispatch => {
     dispatch(getPlaceGeometryBegin())
-    axios.get('http://localhost:4000/google/place_geometry', {
+    axios.get('http://localhost:4000/google/placeGeometry', {
       params: {
         placeId: place_id
       },

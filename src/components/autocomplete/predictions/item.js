@@ -5,7 +5,6 @@ import './item.css'
 
 class PredictionItem extends React.Component {
   render() {
-    console.log(this.props.prediction)
     return (
       <div className='predictionItem'>
         <span>
