@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './header.css'
 import LinksContainer from './links/container'
@@ -34,7 +35,11 @@ class Header extends React.Component {
       <header>
         <div className='header'>
           <LinksContainer links={mainLinks} />
-          <h1 className='temporaryTitle'>Cari Rumah</h1>
+          <h1 className='temporaryTitle'>
+            <Link to={{ pathname: '/' }}>
+              Cari Rumah
+            </Link>
+          </h1>
           <LinksContainer links={userLinks} />
         </div>
       </header>

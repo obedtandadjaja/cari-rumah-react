@@ -26,5 +26,9 @@ h1.temporaryTitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+}
+
+h1.temporaryTitle > a {
+    text-decoration: none;
+    color: inherit;
 }

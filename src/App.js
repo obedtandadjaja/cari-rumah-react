@@ -9,13 +9,13 @@ import SearchPage from './pages/search'
 function App() {
   return (
     <div className='App'>
-      <Header />
-      <div className='AppBody'>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Header />
+        <div className='AppBody'>
           <Route exact path='/' component={HomePage} />
           <Route path='/search' component={SearchPage} />
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     </div>
   )
 }
