@@ -3,7 +3,7 @@ import {
   getAutocompletePredictionsBegin,
   getAutocompletePredictionsSuccess,
   getAutocompletePredictionsFailure
-} from './../actions/autocompleteActions';
+} from './../actions/autocompleteActions'
 
 export function getAutocompletePredictions(input) {
   let jwt = window.localStorage.getItem('jwt') || ''
