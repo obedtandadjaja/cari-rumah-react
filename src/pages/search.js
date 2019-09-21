@@ -24,7 +24,10 @@ function Search(props) {
   } else if (props.placeGeometry) {
     body = (
       <>
-        <MapContainer />
+        <MapContainer
+          lat={props.placeGeometry.location.lat}
+          long={props.placeGeometry.location.lng}
+          zoom={13} />
         <ListingContainer
           lat={props.placeGeometry.location.lat}
           long={props.placeGeometry.location.lng}

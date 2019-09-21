@@ -3,30 +3,23 @@ import GoogleMapReact from 'google-map-react';
 
 import './container.css'
 
-class MapContainer extends React.Component {
-  static defaultProps = {
-    center: {
-      lat: -6.187951,
-      lng: 106.733967
-    },
-    zoom: 13
-  }
-
-  render() {
-    return (
-      <div className='mapContainer'>
-        <GoogleMapReact
-          bootstrapURLKeys={{
-            key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
-            language: 'id',
-            region: 'ind'
-          }}
-          defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
-        />
-      </div>
-    )
-  }
+function MapContainer({ lat, long, zoom }) {
+  return (
+    <div className='mapContainer'>
+      <GoogleMapReact
+        bootstrapURLKeys={{
+          key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+          language: 'id',
+          region: 'ind'
+        }}
+        defaultCenter={{
+          lat: lat,
+          lng: long
+        }}
+        defaultZoom={zoom}
+      />
+    </div>
+  )
 }
 
 export default MapContainer
