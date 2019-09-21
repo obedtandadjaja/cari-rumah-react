@@ -12,11 +12,12 @@ class PredictionItem extends React.Component {
           <Link
             to={{
               pathname: '/search',
-              search: '?param=hello',
+              search: `?placeId=${this.props.prediction.place_id}`,
               hash: '',
               state: {}
-            }} />
-          {this.props.prediction.description}
+            }}>
+            {this.props.prediction.description}
+          </Link>
         </span>
       </div>
     )

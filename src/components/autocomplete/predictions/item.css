@@ -9,7 +9,7 @@
     overflow: hidden;
 }
 
-span {
+.predictionItem > span {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
@@ -17,4 +17,9 @@ span {
     text-transform: none;
     color: rgb(10, 10, 20);
     margin: 0px;
+}
+
+.predictionItem > span > a {
+    text-decoration: none;
+    color: inherit;
 }
