@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { ApolloProvider } from 'react-apollo'
+import { Provider } from 'react-redux'
 
 import App from './App'
 import './index.css'
@@ -9,8 +10,10 @@ import store from './store'
 import apolloClient from './apollo-client'
 
 ReactDOM.render(
-  <ApolloProvider store={store} client={apolloClient}>
-    <App />
+  <ApolloProvider client={apolloClient}>
+    <Provider store={store}>
+      <App />
+    </Provider>
   </ApolloProvider>,
   document.getElementById('root')
 )
