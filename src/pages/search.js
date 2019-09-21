@@ -12,7 +12,7 @@ function Search() {
   })
 
   return (
-    <div className='searchContainer'>
+    <div className='searchPage'>
       <MapContainer />
       { listingContainer }
     </div>
