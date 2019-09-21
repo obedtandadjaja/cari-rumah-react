@@ -32,7 +32,7 @@ function ListingContainer({ lat, long, distance }) {
   } else if (error) {
     body = (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
   } else {
-    return (
+    body = (
       <>
         <div className='listingContainerResultsCounter'>
           Menunjukkan {data.listingsByAddressLatLongDistance.length} dari {data.listingsByAddressLatLongDistance.length}
