@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import queryString from 'query-string'
+import { PropagateLoader } from 'react-spinners'
 
 import './search.css'
 import MapContainer from './../components/map/container'
@@ -18,9 +19,9 @@ function Search(props) {
 
   let body = null
   if (props.placeGeometryLoading) {
-    body = (<p>Loading...</p>)
+    body = (<PropagateLoader loading={true} />)
   } else if (props.placeGeometryError) {
-    body = (<p>There seems to be a problem...</p>)
+    body = (<p>Waduh ada masalah sama websitenya...</p>)
   } else if (props.placeGeometry) {
     body = (
       <>
