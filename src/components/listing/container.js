@@ -7,24 +7,46 @@ import './container.css'
 import ListingList from './list'
 
 const QUERY = gql`
-  query listings($lat: Float!, $long: Float!, $distance: Float!) {
-    listingsByAddressLatLongDistance(lat: $lat, long: $long, distance: $distance) {
-      id
-      num_bedrooms
-      num_bathrooms
-      lot_size_m2
-      price_idr
-      residential_type
-      type
-      address {
-        full_address
+  query listings($lat: Float!, $long: Float!, $distance: Float!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput) {
+    listingsByAddressLatLongDistance(lat: $lat, long: $long, distance: $distance, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination) {
+      edges {
+        node {
+          id
+          num_bedrooms
+          num_bathrooms
+          lot_size_m2
+          price_idr
+          residential_type
+          type
+          address {
+            full_address
+          }
+        }
+      }
+      pageInfo {
+        endCursor
       }
     }
   }
 `
 
 function ListingContainer({ lat, long, distance }) {
-  const { loading, error, data } = useQuery(QUERY, { variables: { lat, long, distance }})
+  const { loading, error, data } = useQuery(
+    QUERY,
+    {
+      variables: {
+        lat,
+        long,
+        distance,
+        pagination: {
+          batchSize: 20,
+          after: null
+        }
+      }
+    }
+  )
+
+  console.log(data)
 
   let body = null
   if (loading) {
@@ -35,9 +57,9 @@ function ListingContainer({ lat, long, distance }) {
     body = (
       <>
         <div className='listingContainerResultsCounter'>
-          Menunjukkan {data.listingsByAddressLatLongDistance.length} dari {data.listingsByAddressLatLongDistance.length}
+          Menunjukkan {data.listingsByAddressLatLongDistance.edges.length} dari {data.listingsByAddressLatLongDistance.edges.length}
         </div>
-        <ListingList listings={data.listingsByAddressLatLongDistance} />
+        <ListingList listings={data.listingsByAddressLatLongDistance.edges} />
       </>
     )
   }

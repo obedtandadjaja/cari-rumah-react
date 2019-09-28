@@ -10,12 +10,11 @@ import ListingContainer from './../components/listing/container'
 import { getPlaceGeometry } from './../api/place-geometry'
 
 function Search(props) {
+  // should only be called once just to get the lat and long of the place
   useEffect(() => {
     let placeId = queryString.parse(props.location.search).placeId
     props.getPlaceGeometry(placeId)
   }, [])
-
-  console.log(props)
 
   let body = null
   if (props.placeGeometryLoading) {

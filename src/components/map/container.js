@@ -4,6 +4,10 @@ import GoogleMapReact from 'google-map-react';
 import './container.css'
 
 function MapContainer({ lat, long, zoom }) {
+  function onMapChange(event) {
+    console.log(event)
+  }
+
   return (
     <div className='mapContainer'>
       <GoogleMapReact
@@ -17,6 +21,7 @@ function MapContainer({ lat, long, zoom }) {
           lng: long
         }}
         defaultZoom={zoom}
+        onChange={onMapChange}
       />
     </div>
   )

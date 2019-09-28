@@ -11,13 +11,13 @@ class ListingsList extends React.Component {
           this.props.listings.length !== 0 &&
           this.props.listings.map(listing => {
             return (
-              <ListingItem listing={listing} />
+              <ListingItem listing={listing.node} />
             )
           })
         }
         {
           this.props.listings.length === 0 &&
-          <div class='listingItem' style={{padding:'10px'}}>
+          <div className='listingItem' style={{padding:'10px'}}>
             <span role='img'>Mohon maap nih ga ketemu listing di daerah situ... 😭</span>
           </div>
         }
