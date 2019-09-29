@@ -26,8 +26,7 @@ function Search(props) {
       <>
         <MapContainer
           lat={props.placeGeometry.location.lat}
-          long={props.placeGeometry.location.lng}
-          zoom={13} />
+          long={props.placeGeometry.location.lng} />
         <ListingContainer
           lat={props.placeGeometry.location.lat}
           long={props.placeGeometry.location.lng}

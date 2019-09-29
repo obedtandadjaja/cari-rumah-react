@@ -1,11 +1,13 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react';
+import { connect } from 'react-redux'
 
 import './container.css'
+import { changeMapBounds } from './../../actions/mapChangeActions'
 
-function MapContainer({ lat, long, zoom }) {
+function MapContainer(props) {
   function onMapChange(event) {
-    console.log(event)
+    props.changeMapBounds(event.marginBounds)
   }
 
   return (
@@ -17,14 +19,22 @@ function MapContainer({ lat, long, zoom }) {
           region: 'ind'
         }}
         defaultCenter={{
-          lat: lat,
-          lng: long
+          lat: props.lat,
+          lng: props.long
         }}
-        defaultZoom={zoom}
+        defaultZoom={13}
         onChange={onMapChange}
       />
     </div>
   )
 }
 
-export default MapContainer
+const mapStateToProps = state => ({
+  mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds'])
+})
+
+const mapDispatchToProps = {
+  changeMapBounds
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MapContainer)

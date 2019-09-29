@@ -5,6 +5,7 @@ import './item.css'
 
 class ListingItem extends React.Component {
   render() {
+    console.log(this.props)
     return (
       <div className='listingItem'>
         {
@@ -12,18 +13,18 @@ class ListingItem extends React.Component {
             <div className='listingItemPicture' style={{backgroundImage: `url(${this.props.listing.display_picture})`}} />
         }
         <div className='listingItemBody'>
-          <span className='listingItemPrice'>Rp. {(this.props.listing.price_cents/100).toLocaleString()}</span>
+          <span className='listingItemPrice'>Rp. {(this.props.listing.price_idr/100).toLocaleString()}</span>
           <div className='listingItemStatsContainer'>
             {
-              this.props.listings.num_bedrooms &&
+              this.props.listing.num_bedrooms &&
                 <span className='listingItemStatsItem'>{Pluralize('Bed', this.props.listing.num_bedrooms, true)}</span>
             }
             {
-              this.props.listings.num_bathrooms &&
+              this.props.listing.num_bathrooms &&
                 <span className='listingItemStatsItem'>{Pluralize('Bath', this.props.listing.num_bathrooms, true)}</span>
             }
             {
-              this.props.listings.num_bathrooms &&
+              this.props.listing.num_parking_spots &&
                 <span className='listingItemStatsItem'>{Pluralize('Parking', this.props.listing.num_parking_spots, true)}</span>
             }
           </div>
