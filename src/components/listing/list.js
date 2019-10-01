@@ -33,7 +33,7 @@ const QUERY = gql`
 function ListingList(props) {
   console.log(props)
 
-  const { loading, error, data } = useQuery(
+  const { error, data } = useQuery(
     QUERY,
     {
       variables: {
@@ -54,17 +54,15 @@ function ListingList(props) {
   )
 
   let body = null
-  if (loading) {
-    body = (<PropagateLoader loading={true} />)
-  } else if (error) {
+  if (error) {
     body = (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
-  } else if (data.listingsByAddressLatLongRectangle.length === 0) {
+  } else if (data && data.listingsByAddressLatLongRectangle.length === 0) {
     body = (
       <div className='listingItem' style={{padding:'10px'}}>
         <span role='img'>Mohon maap nih ga ketemu listing di daerah situ... 😭</span>
       </div>
     )
-  } else {
+  } else if (data) {
     body = (
       <>
         <div className='listingContainerResultsCounter'>
@@ -86,4 +84,4 @@ function ListingList(props) {
   )
 }
 
-export default ListingList
+export default React.memo(ListingList)
