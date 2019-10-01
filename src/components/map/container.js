@@ -10,6 +10,8 @@ function MapContainer(props) {
     props.changeMapBounds(event.marginBounds)
   }
 
+  console.log(props)
+
   return (
     <div className='mapContainer'>
       <GoogleMapReact
@@ -29,8 +31,12 @@ function MapContainer(props) {
   )
 }
 
+function areEqual(prevProps, nextProps) {
+  return prevProps.lat && prevProps.long && nextProps.lat && nextProps.long
+}
+
 const mapDispatchToProps = {
   changeMapBounds
 }
 
-export default connect(null, mapDispatchToProps)(MapContainer)
+export default React.memo(connect(null, mapDispatchToProps)(MapContainer), areEqual)

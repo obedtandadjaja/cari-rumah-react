@@ -1,11 +1,10 @@
 .listingContainer {
     height: 100%;
+    width: 369px;
     display: flex;
     flex-flow: column;
-    padding: 10px;
     border-top: 1px solid #f0f0f0;
-    overflow-y: scroll;
-    width: 369px;
+    position: relative;
 }
 
 .listingContainerResultsCounter {
