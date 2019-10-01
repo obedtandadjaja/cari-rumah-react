@@ -29,12 +29,8 @@ function MapContainer(props) {
   )
 }
 
-const mapStateToProps = state => ({
-  mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds'])
-})
-
 const mapDispatchToProps = {
   changeMapBounds
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MapContainer)
+export default connect(null, mapDispatchToProps)(MapContainer)

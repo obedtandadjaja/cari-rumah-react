@@ -20,8 +20,12 @@ function ListingContainer(props) {
   )
 }
 
+function areEqual(prevProps, nextProps) {
+  return (prevProps.mapBounds.ne && prevProps.mapBounds.sw) === (nextProps.mapBounds.ne && nextProps.mapBounds.sw)
+}
+
 const mapStateToProps = state => ({
   mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds'])
 })
 
-export default connect(mapStateToProps, {})(ListingContainer)
+export default React.memo(connect(mapStateToProps, {})(ListingContainer), areEqual)

@@ -5,7 +5,6 @@ import './item.css'
 
 class ListingItem extends React.Component {
   render() {
-    console.log(this.props)
     return (
       <div className='listingItem'>
         {
@@ -35,4 +34,8 @@ class ListingItem extends React.Component {
   }
 }
 
-export default ListingItem
+function areEqual(prevProps, nextProps) {
+  return prevProps.listing.id === nextProps.listing.id
+}
+
+export default React.memo(ListingItem, areEqual)

@@ -65,7 +65,6 @@ function ListingList(props) {
       </div>
     )
   } else {
-    console.log(data)
     body = (
       <>
         <div className='listingContainerResultsCounter'>
