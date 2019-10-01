@@ -31,12 +31,8 @@ function MapContainer(props) {
   )
 }
 
-function areEqual(prevProps, nextProps) {
-  return prevProps.lat && prevProps.long && nextProps.lat && nextProps.long
-}
-
 const mapDispatchToProps = {
   changeMapBounds
 }
 
-export default React.memo(connect(null, mapDispatchToProps)(MapContainer), areEqual)
+export default connect(null, mapDispatchToProps)(MapContainer)
