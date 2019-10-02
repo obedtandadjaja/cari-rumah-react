@@ -64,9 +64,6 @@ function ListingList(props) {
   } else if (data) {
     return (
       <>
-        <div className='listingContainerResultsCounter'>
-          Menunjukkan {data.listingsByAddressLatLongRectangle.edges.length} dari {data.listingsByAddressLatLongRectangle.edges.length}
-        </div>
         <div className='listingList'>
         {
           data.listingsByAddressLatLongRectangle.edges.map(listing =>
