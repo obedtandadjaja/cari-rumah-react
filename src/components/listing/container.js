@@ -15,7 +15,25 @@ function ListingContainer(props) {
 
   return (
     <div className='listingContainer'>
-      { body }
+      <div className='listingHeader'>
+        <div className='filterList'>
+          <div className='filterContainer'>
+            <button className='filterButton'>Harga</button>
+          </div>
+          <div className='filterContainer'>
+            <button className='filterButton'>Kamar</button>
+          </div>
+          <div className='filterContainer'>
+            <button className='filterButton'>Toilet</button>
+          </div>
+          <div className='filterContainer'>
+            <button className='filterButton'>Filter Lainnya</button>
+          </div>
+        </div>
+      </div>
+      <div className='listingBody'>
+        { body }
+      </div>
     </div>
   )
 }

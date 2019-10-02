@@ -51,35 +51,32 @@ function ListingList(props) {
     }
   )
 
-  let body = null
   if (error) {
-    body = (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
+    return (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
   } else if (data && data.listingsByAddressLatLongRectangle.length === 0) {
-    body = (
-      <div className='listingItem' style={{padding:'10px'}}>
-        <span role='img'>Mohon maap nih ga ketemu listing di daerah situ... 😭</span>
+    return (
+      <div className='listingList'>
+        <div className='listingItem' style={{padding:'10px'}}>
+          <span role='img'>Mohon maap nih ga ketemu listing di daerah situ... 😭</span>
+        </div>
       </div>
     )
   } else if (data) {
-    body = (
+    return (
       <>
         <div className='listingContainerResultsCounter'>
           Menunjukkan {data.listingsByAddressLatLongRectangle.edges.length} dari {data.listingsByAddressLatLongRectangle.edges.length}
         </div>
+        <div className='listingList'>
         {
           data.listingsByAddressLatLongRectangle.edges.map(listing =>
             <ListingItem key={listing.node.id} listing={listing.node} />
           )
         }
+        </div>
       </>
     )
   }
-
-  return (
-    <div className='listingsList'>
-      { body }
-    </div>
-  )
 }
 
 export default React.memo(ListingList)
