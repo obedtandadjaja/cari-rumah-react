@@ -1,0 +1,15 @@
+span.filterInputTitle {
+    font-weight: 600;
+}
+
+.rangeInput {
+    padding: 10px 0;
+}
+
+.rangeInput input {
+    text-overflow: ellipsis;
+    cursor: text;
+    border-style: solid;
+    border-color: rgb(209, 209, 213);
+    padding: 5px;
+}

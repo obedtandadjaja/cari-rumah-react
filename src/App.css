@@ -21,3 +21,7 @@ header {
 .AppBody {
     flex: 1 1 auto;
 }
+
+.hidden {
+    visibility: hidden;
+}
