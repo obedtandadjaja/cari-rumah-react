@@ -29,7 +29,6 @@
     height: 32px;
     margin-right: 5px;
     max-width: 109px;
-    cursor: pointer;
 }
 
 button.filterButton {
@@ -62,4 +61,70 @@ button.filterButton {
         min-width: 700px;
         max-width: 700px;
     }
+}
+
+.filterPopover {
+    position: absolute;
+    transition: opacity .2s ease-out;
+    padding: 0;
+    z-index: 999;
+    border-radius: 3px;
+    background-color: #FFF;
+    box-shadow: 0 0 5px rgba(0,0,0,.35);
+    top: 50px;
+    border: none;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.filterPopoverArrow {
+    border-style: solid;
+    border-width: 0 8px 8px;
+    display: inline-block;
+    position: absolute;
+    top: -8px;
+    left: 54px;
+    /* transform: translate(-50%,0); */
+    content: '';
+    border-color: transparent transparent #fff;
+}
+
+.filterPopoverContent {
+    padding: 10px;
+}
+
+span.filterInputTitle {
+    font-weight: 600;
+}
+
+.rangeInput {
+    padding: 10px 0;
+}
+
+input {
+    text-overflow: ellipsis;
+    cursor: text;
+    border-style: solid;
+    border-color: rgb(209, 209, 213);
+    padding: 5px;
+}
+
+.filterPopoverActionWrapper {
+    background: rgba(0,0,0,0.1);
+    padding: 10px;
+}
+
+.filterActionButton {
+    background: #FFF;
+    color: rgb(0,0,0);
+    font-weight: 600;
+    font-size: 14px;
+    -ms-flex-order: 2;
+    order: 2;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px;
 }

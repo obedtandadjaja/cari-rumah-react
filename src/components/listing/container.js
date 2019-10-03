@@ -19,6 +19,22 @@ function ListingContainer(props) {
         <div className='filterList'>
           <div className='filterContainer'>
             <button className='filterButton'>Harga</button>
+            <div className='filterPopover hidden'>
+              <span className='filterPopoverArrow'></span>
+              <div className='filterPopoverContent'>
+                <div className='filterInputWrapper'>
+                  <span className='filterInputTitle'>Kisaran Harga</span>
+                  <div className='rangeInput'>
+                    <input placeholder='Min' />
+                    <span>&nbsp;-&nbsp;</span>
+                    <input placeholder='Max' />
+                  </div>
+                </div>
+              </div>
+              <div className='filterPopoverActionWrapper'>
+                <button className='filterActionButton'>Filter</button>
+              </div>
+            </div>
           </div>
           <div className='filterContainer'>
             <button className='filterButton'>Kamar</button>
