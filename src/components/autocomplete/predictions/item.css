@@ -5,7 +5,7 @@
     width: calc(100% - 40px);
     position: relative;
     box-sizing: border-box;
-    padding: 16px 0px;
+    padding: 16px 24px;
     overflow: hidden;
 }
 
@@ -22,4 +22,13 @@
 .predictionItem > span > a {
     text-decoration: none;
     color: inherit;
+}
+
+.predictionItem.mini {
+    padding: 5px 10px;
+    width: calc(100% - 5px);
+}
+
+.predictionItem.mini > span {
+    font-size: 12px;
 }

@@ -6,8 +6,8 @@ import PredictionsList from './list'
 class PredictionsContainer extends React.Component {
   render() {
     return (
-      <div className='predictionsContainer'>
-        <PredictionsList predictions={this.props.predictions} />
+      <div className={this.props.mini ? 'predictionsContainer mini' : 'predictionsContainer'}>
+        <PredictionsList predictions={this.props.predictions} mini={this.props.mini} />
       </div>
     )
   }

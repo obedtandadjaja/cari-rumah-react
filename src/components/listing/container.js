@@ -5,6 +5,7 @@ import { PropagateLoader } from 'react-spinners'
 import './container.css'
 import ListingList from './list'
 import FilterContainer from './../filter/container'
+import Autocomplete from './../autocomplete/autocomplete'
 
 function ListingContainer(props) {
   let body = null
@@ -18,6 +19,7 @@ function ListingContainer(props) {
     <div className='listingContainer'>
       <div className='listingHeader'>
         <div className='filterList'>
+          <Autocomplete mini={true} />
           <FilterContainer />
         </div>
       </div>
@@ -28,12 +30,12 @@ function ListingContainer(props) {
   )
 }
 
-function areEqual(prevProps, nextProps) {
-  return (prevProps.mapBounds.ne && prevProps.mapBounds.sw) === (nextProps.mapBounds.ne && nextProps.mapBounds.sw)
-}
+/* function areEqual(prevProps, nextProps) {
+ *   return (prevProps.mapBounds.ne && prevProps.mapBounds.sw) === (nextProps.mapBounds.ne && nextProps.mapBounds.sw)
+ * } */
 
 const mapStateToProps = state => ({
   mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds'])
 })
 
-export default React.memo(connect(mapStateToProps, {})(ListingContainer), areEqual)
+export default React.memo(connect(mapStateToProps, {})(ListingContainer))

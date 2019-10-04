@@ -18,7 +18,7 @@ class PredictionsList extends React.Component {
         {
           this.props.predictions.map((prediction, i) => (
             <li className='predictionsListLi' key={i}>
-              <PredictionItem prediction={prediction} />
+              <PredictionItem prediction={prediction} mini={this.props.mini} />
             </li>
           ))
         }

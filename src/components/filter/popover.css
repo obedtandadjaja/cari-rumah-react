@@ -17,7 +17,6 @@
     position: absolute;
     top: -8px;
     left: 54px;
-    /* transform: translate(-50%,0); */
     content: '';
     border-color: transparent transparent #fff;
 }
@@ -27,13 +26,13 @@
 }
 
 .filterPopoverActionWrapper {
-    background: rgba(0,0,0,0.1);
+    background-color: #006AFF;
     padding: 10px;
 }
 
 .filterActionButton {
     background: #FFF;
-    color: rgb(0,0,0);
+    color: #006AFF;
     font-weight: 600;
     font-size: 14px;
     -ms-flex-order: 2;

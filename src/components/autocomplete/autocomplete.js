@@ -38,14 +38,14 @@ class Autocomplete extends React.Component {
   render() {
     return (
       <div>
-        <input className='autocomplete' type='text' placeholder='Cari alamat, daerah, kota, atau kode ZIP'
+        <input className={this.props.mini ? 'autocomplete mini' : 'autocomplete'} type='text' placeholder='Cari alamat, daerah, kota, atau kode ZIP'
           onChange={this.onChange} />
         <br />
         {
           !this.props.autocompletePredictionsLoading &&
           !this.props.autocompletePredictionsError &&
           this.state.text &&
-          <PredictionsContainer predictions={this.props.autocompletePredictions} />
+          <PredictionsContainer predictions={this.props.autocompletePredictions} mini={this.props.mini} />
         }
       </div>
     )

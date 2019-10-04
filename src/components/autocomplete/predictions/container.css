@@ -5,3 +5,10 @@
     overflow-y: auto;
     display: inline-block;
 }
+
+.predictionsContainer.mini {
+    width: 400px;
+    position: absolute;
+    top: 45px;
+    border: solid 1px rgba(0,0,0,0.2);
+}

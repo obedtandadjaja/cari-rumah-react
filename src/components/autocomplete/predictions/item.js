@@ -6,7 +6,7 @@ import './item.css'
 class PredictionItem extends React.Component {
   render() {
     return (
-      <div className='predictionItem'>
+      <div className={this.props.mini ? 'predictionItem mini' : 'predictionItem'}>
         <span>
           <Link
             to={{

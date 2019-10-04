@@ -14,7 +14,7 @@ function Search(props) {
   useEffect(() => {
     let placeId = queryString.parse(props.location.search).placeId
     props.getPlaceGeometry(placeId)
-  }, [])
+  }, [props.location.search])
 
   let body = null
   if (props.placeGeometryLoading) {
