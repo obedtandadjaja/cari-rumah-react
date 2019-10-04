@@ -5,6 +5,10 @@
 
 @media (max-width: 900px) {
     .mapContainer {
-        display: none;
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        left: 0;
+        right: 0;
     }
 }

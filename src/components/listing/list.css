@@ -1,6 +1,6 @@
 .listingList {
     position: absolute;
-    top: 50px;
+    top: 132px;
     bottom: 0;
     overflow: auto;
     display: flex;
@@ -9,4 +9,12 @@
     align-items: flex-start;
     justify-content: flex-start;
     padding: 22px;
+}
+
+@media (max-width: 900px) {
+    .listingList {
+        position: fixed;
+        left: 0;
+        right: 0;
+    }
 }

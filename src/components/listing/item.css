@@ -6,6 +6,7 @@
     border-collapse: separate;
     background-color: #fff;
     margin: 5px;
+    width: 312px;
 }
 
 .listingItem:hover {

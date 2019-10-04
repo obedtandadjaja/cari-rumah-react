@@ -31,8 +31,6 @@ function MapContainer(props) {
   )
 }
 
-const mapDispatchToProps = {
-  changeMapBounds
-}
+const mapDispatchToProps = { changeMapBounds }
 
 export default connect(null, mapDispatchToProps)(MapContainer)

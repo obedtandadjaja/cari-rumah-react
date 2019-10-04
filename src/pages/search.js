@@ -29,8 +29,7 @@ function Search(props) {
           long={props.placeGeometry.location.lng} />
         <ListingContainer
           lat={props.placeGeometry.location.lat}
-          long={props.placeGeometry.location.lng}
-          distance={5} />
+          long={props.placeGeometry.location.lng} />
       </>
     )
   }

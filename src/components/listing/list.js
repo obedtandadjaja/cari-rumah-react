@@ -1,7 +1,6 @@
 import React from 'react'
 import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
-import { PropagateLoader } from 'react-spinners'
 
 import './list.css'
 import ListingItem from './item'
@@ -16,6 +15,7 @@ const QUERY = gql`
           num_bathrooms
           lot_size_m2
           price_idr
+          display_picture_url
           residential_type
           type
           address {
@@ -31,6 +31,8 @@ const QUERY = gql`
 `
 
 function ListingList(props) {
+  console.log(props.mapBounds)
+
   const { error, data } = useQuery(
     QUERY,
     {
@@ -52,7 +54,8 @@ function ListingList(props) {
   )
 
   if (error) {
-    return (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
+    return (<p>{ JSON.stringify(error) }</p>)
+    /* return (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>) */
   } else if (data && data.listingsByAddressLatLongRectangle.length === 0) {
     return (
       <div className='listingList'>
@@ -74,6 +77,8 @@ function ListingList(props) {
       </>
     )
   }
+
+  return (<></>)
 }
 
-export default React.memo(ListingList)
+export default ListingList
