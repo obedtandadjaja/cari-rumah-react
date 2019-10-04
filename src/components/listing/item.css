@@ -6,11 +6,6 @@
     border-collapse: separate;
     background-color: #fff;
     margin: 5px;
-    max-width: 312px;
-}
-
-.listingItem:nth-child(even) {
-    margin-left: 10px;
 }
 
 .listingItem:hover {
@@ -19,13 +14,14 @@
 }
 
 .listingItemPicture {
-    width: 312px;
+    width: 100%;
     height: 202px;
     background-size: cover;
     background-position: center center;
 }
 
 .listingItemBody {
+    width: calc(100% - 15px);
     padding: 10px;
 }
 
@@ -53,4 +49,16 @@ span.listingItemPrice {
     font-size: 1.125rem;
     color: #333;
     font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .listingItem {
+        width: calc((100% / 2) - 11px);
+    }
+}
+
+@media (min-width: 1200px) {
+    .listingItem:nth-child(even) {
+        margin-left: 10px;
+    }
 }

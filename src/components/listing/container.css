@@ -1,5 +1,6 @@
 .listingContainer {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-flow: column;
     border-top: 1px solid #f0f0f0;
@@ -25,8 +26,8 @@
 
 @media (min-width: 900px) {
     .listingContainer {
-        min-width: 457px;
-        max-width: 457px;
+        min-width: 356px;
+        max-width: 356px;
     }
 }
 
