@@ -2,15 +2,13 @@ import React from 'react'
 import Pluralize from 'pluralize'
 
 import './item.css'
+import ListingItemPicture from './item/picture'
 
 class ListingItem extends React.Component {
   render() {
     return (
       <div className='listingItem'>
-        {
-          this.props.listing.display_picture &&
-            <div className='listingItemPicture' style={{backgroundImage: `url(${this.props.listing.display_picture})`}} />
-        }
+        <ListingItemPicture picture_url={this.props.listing.display_picture_url} />
         <div className='listingItemBody'>
           <span className='listingItemPrice'>Rp. {(this.props.listing.price_idr/100).toLocaleString()}</span>
           <div className='listingItemStatsContainer'>
