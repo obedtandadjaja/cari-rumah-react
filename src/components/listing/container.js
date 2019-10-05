@@ -17,7 +17,7 @@ function ListingContainer(props) {
   return (
     <div className='listingContainer'>
       <div className='listingHeader'>
-        <FilterList listingFilter={props.listingFilter} />
+        <FilterList />
       </div>
       <div className='listingBody'>
         { body }
@@ -27,8 +27,7 @@ function ListingContainer(props) {
 }
 
 const mapStateToProps = state => ({
-  mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds']),
-  listingFilter: state.listingFilter.toJS()
+  mapBounds: state.mapChange.getIn(['mapChange', 'mapBounds'])
 })
 
-export default React.memo(connect(mapStateToProps, {})(ListingContainer))
+export default connect(mapStateToProps, {})(ListingContainer)

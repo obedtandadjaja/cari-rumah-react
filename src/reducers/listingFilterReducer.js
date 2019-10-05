@@ -6,6 +6,7 @@ import {
   LISTING_FILTER_BATHROOM_CHANGE,
   LISTING_FILTER_TYPE_CHANGE,
   LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE,
+  LISTING_FILTER_YEAR_BUILT_CHANGE,
 } from './../actions/listingFilterActions'
 
 const initialState = Map({
@@ -35,6 +36,10 @@ export default function listingFilterReducer(state=initialState, action) {
     case LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE:
       return state.merge({
         residentialType: action.payload
+      })
+    case LISTING_FILTER_YEAR_BUILT_CHANGE:
+      return state.merge({
+        yearBuiltMin: action.payload
       })
     default:
       return state

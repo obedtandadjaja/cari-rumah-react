@@ -1,6 +1,7 @@
 import React from 'react'
 import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
+import { connect } from 'react-redux'
 
 import './list.css'
 import ListingItem from './item'
@@ -79,4 +80,14 @@ function ListingList(props) {
   return (<></>)
 }
 
-export default ListingList
+
+const mapStateToProps = state => ({
+  priceFilter: state.listingFilter.getIn(['price']),
+  bedroomMinFilter: state.listingFilter.getIn(['bedroomMin']),
+  bathroomMinFilter: state.listingFilter.getIn(['bathroomMin']),
+  typeFilter: state.listingFilter.getIn(['type']),
+  residentialTypeFilter: state.listingFilter.getIn(['residentialType']),
+  yearBuiltMinFilter: state.listingFilter.getIn(['yearBuiltMin']),
+})
+
+export default connect(mapStateToProps, {})(ListingList)

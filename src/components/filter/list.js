@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import './list.css'
 import FilterPriceContainer from './../filter/priceContainer'
@@ -13,4 +14,8 @@ function FilterList(props) {
   )
 }
 
-export default FilterList
+const mapStateToProps = state => ({
+  listingFilter: state.listingFilter.toJS()
+})
+
+export default connect(mapStateToProps, {})(FilterList)

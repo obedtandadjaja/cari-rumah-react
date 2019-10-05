@@ -18,7 +18,7 @@ function FilterContainer(props) {
   }
 
   function filterActionButtonOnClick() {
-    changeListingFilter(values)
+    props.changeListingFilter(values)
     setActive(false)
   }
 

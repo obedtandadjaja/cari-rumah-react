@@ -10,19 +10,19 @@ export function getPlaceGeometry(place_id) {
 
   return dispatch => {
     dispatch(getPlaceGeometryBegin())
-    axios.get('http://localhost:4000/google/placeGeometry', {
+
+    const request = axios.get('http://localhost:4000/google/placeGeometry', {
       params: {
         placeId: place_id
       },
       headers: {
         authorization: `Bearer ${jwt}`
       }
-    }).then(res => {
-        dispatch(getPlaceGeometrySuccess(res.data))
-        return res.data
-      })
-      .catch(err => {
-        dispatch(getPlaceGeometryFailure(err))
-      })
+    })
+
+    return request.then(
+      res => dispatch(getPlaceGeometrySuccess(res.data)),
+      err => dispatch(getPlaceGeometryFailure(err))
+    )
   }
 }
