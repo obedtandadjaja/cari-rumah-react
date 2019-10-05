@@ -1,8 +1,8 @@
 import React from 'react'
 
-import './input.css'
+import './price.css'
 
-function FilterInput(props) {
+function FilterInputPrice(props) {
   return (
     <div className='filterInputWrapper'>
       <span className='filterInputTitle'>Kisaran Harga</span>
@@ -15,4 +15,4 @@ function FilterInput(props) {
   )
 }
 
-export default FilterInput
+export default FilterInputPrice

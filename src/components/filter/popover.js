@@ -9,9 +9,6 @@ function FilterPopover(props) {
       <div className='filterPopoverContent'>
         { props.children }
       </div>
-      <div className='filterPopoverActionWrapper'>
-        <button className='filterActionButton'>Filter</button>
-      </div>
     </div>
   )
 }
