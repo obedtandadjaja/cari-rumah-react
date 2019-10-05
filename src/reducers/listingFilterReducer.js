@@ -23,11 +23,11 @@ export default function listingFilterReducer(state=initialState, action) {
       })
     case LISTING_FILTER_BEDROOM_CHANGE:
       return state.merge({
-        bedroomMin: action.payload
+        bedroomsMin: action.payload
       })
     case LISTING_FILTER_BATHROOM_CHANGE:
       return state.merge({
-        bathroomMin: action.payload
+        bathroomsMin: action.payload
       })
     case LISTING_FILTER_TYPE_CHANGE:
       return state.merge({

@@ -83,8 +83,8 @@ function ListingList(props) {
 
 const mapStateToProps = state => ({
   priceFilter: state.listingFilter.getIn(['price']),
-  bedroomMinFilter: state.listingFilter.getIn(['bedroomMin']),
-  bathroomMinFilter: state.listingFilter.getIn(['bathroomMin']),
+  bedroomsMinFilter: state.listingFilter.getIn(['bedroomsMin']),
+  bathroomsMinFilter: state.listingFilter.getIn(['bathroomsMin']),
   typeFilter: state.listingFilter.getIn(['type']),
   residentialTypeFilter: state.listingFilter.getIn(['residentialType']),
   yearBuiltMinFilter: state.listingFilter.getIn(['yearBuiltMin']),

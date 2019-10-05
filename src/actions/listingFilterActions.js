@@ -11,14 +11,14 @@ export const changePriceListingFilter = (priceMin, priceMax) => ({
   payload: { priceMin, priceMax }
 })
 
-export const changeBedroomListingFilter = (bedroomMin) => ({
+export const changeBedroomListingFilter = (bedroomsMin) => ({
   type: LISTING_FILTER_BEDROOM_CHANGE,
-  payload: { bedroomMin }
+  payload: { bedroomsMin }
 })
 
-export const changeBathroomListingFilter = (bathroomMin) => ({
+export const changeBathroomListingFilter = (bathroomsMin) => ({
   type: LISTING_FILTER_BATHROOM_CHANGE,
-  payload: { bathroomMin }
+  payload: { bathroomsMin }
 })
 
 export const changeTypeListingFilter = (type) => ({
