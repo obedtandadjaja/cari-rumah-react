@@ -7,9 +7,9 @@ function FilterInput(props) {
     <div className='filterInputWrapper'>
       <span className='filterInputTitle'>Kisaran Harga</span>
       <div className='rangeInput'>
-        <input placeholder='Min' />
+        <input placeholder='IDR Minimum' />
         <span>&nbsp;-&nbsp;</span>
-        <input placeholder='Max' />
+        <input placeholder='IDR Maksimum' />
       </div>
     </div>
   )
