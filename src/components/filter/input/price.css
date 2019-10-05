@@ -1,3 +1,7 @@
+.filterInputWrapper {
+    padding: 10px;
+}
+
 span.filterInputTitle {
     font-weight: 600;
 }

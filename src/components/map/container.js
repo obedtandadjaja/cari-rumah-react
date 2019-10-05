@@ -10,8 +10,6 @@ function MapContainer(props) {
     props.changeMapBounds(event.marginBounds)
   }
 
-  console.log(props)
-
   return (
     <div className='mapContainer'>
       <GoogleMapReact

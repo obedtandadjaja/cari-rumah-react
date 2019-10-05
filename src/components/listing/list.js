@@ -31,8 +31,6 @@ const QUERY = gql`
 `
 
 function ListingList(props) {
-  console.log(props.mapBounds)
-
   const { error, data } = useQuery(
     QUERY,
     {

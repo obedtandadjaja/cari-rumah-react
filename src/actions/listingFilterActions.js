@@ -3,6 +3,7 @@ export const LISTING_FILTER_BEDROOM_CHANGE = 'LISTING_FILTER_BEDROOM_CHANGE'
 export const LISTING_FILTER_BATHROOM_CHANGE = 'LISTING_FILTER_BATHROOM_CHANGE'
 export const LISTING_FILTER_TYPE_CHANGE = 'LISTING_FILTER_TYPE_CHANGE'
 export const LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE = 'LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE'
+export const LISTING_FILTER_GENERIC_CHANGE = 'LISTING_FILTER_GENERIC_CHANGE'
 
 export const changePriceListingFilter = (priceMin, priceMax) => ({
   type: LISTING_FILTER_PRICE_CHANGE,
@@ -27,4 +28,9 @@ export const changeTypeListingFilter = (type) => ({
 export const changeResidentialTypeListingFilter = (residentialType) => ({
   type: LISTING_FILTER_TYPE_CHANGE,
   payload: { residentialType }
+})
+
+export const changeListingFilter = (filterState) => ({
+  type: LISTING_FILTER_GENERIC_CHANGE,
+  payload: { filter: filterState }
 })
