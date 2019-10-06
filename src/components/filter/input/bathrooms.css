@@ -1,0 +1,29 @@
+.filterPillList {
+    margin-top: 10px;
+    flex: 1 2 60px;
+    flex-direction: row;
+}
+
+.filterPill {
+    display: inline-block;
+    background-color: #fff;
+    border: solid 1px #A7A6AB;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.filterPill.selected {
+    background-color: #006AFF;
+    border-color: #006AFF;
+    color: #fff;
+}
+
+.filterPill:first-child {
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.filterPill:last-child {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
