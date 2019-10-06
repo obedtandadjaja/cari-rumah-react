@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import './price.css'
 
 function FilterInputPrice(props) {
-  const [price, setPrice] = useState({})
+  const [price, setPrice] = useState(props.listingFilter.price || {})
 
   function handleChangePriceMin(event) {
     if (!event.target.value) {

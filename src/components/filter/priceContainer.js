@@ -19,7 +19,7 @@ function FilterPriceContainer(props) {
   }
 
   return (
-    <FilterContainer listingFilter={props.listingFilter} filterButtonTextResolver={filterButtonTextResolver}>
+    <FilterContainer filterButtonTextResolver={filterButtonTextResolver} filterAction={true}>
       <FilterInputPrice />
     </FilterContainer>
   )

@@ -1,4 +1,5 @@
 .filterPopover {
+    min-width: 109px;
     position: absolute;
     transition: opacity .2s ease-out;
     padding: 0;

@@ -31,13 +31,16 @@ function FilterContainer(props) {
         {
           React.cloneElement(props.children, { onChange: handleFilterFieldChange, listingFilter: props.listingFilter })
         }
-        <div className='filterPopoverActionWrapper'>
-          <button
-            className='filterActionButton'
-            onClick={filterActionButtonOnClick}>
-            Filter
-          </button>
-        </div>
+        {
+          props.filterAction &&
+          <div className='filterPopoverActionWrapper'>
+            <button
+              className='filterActionButton'
+              onClick={filterActionButtonOnClick}>
+              Filter
+            </button>
+          </div>
+        }
       </FilterPopover>
     </div>
   )

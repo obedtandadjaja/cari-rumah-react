@@ -1,6 +1,6 @@
 export const LISTING_FILTER_PRICE_CHANGE = 'LISTING_FILTER_PRICE_CHANGE'
-export const LISTING_FILTER_BEDROOM_CHANGE = 'LISTING_FILTER_BEDROOM_CHANGE'
-export const LISTING_FILTER_BATHROOM_CHANGE = 'LISTING_FILTER_BATHROOM_CHANGE'
+export const LISTING_FILTER_BEDROOMS_CHANGE = 'LISTING_FILTER_BEDROOMS_CHANGE'
+export const LISTING_FILTER_BATHROOMS_CHANGE = 'LISTING_FILTER_BATHROOMS_CHANGE'
 export const LISTING_FILTER_TYPE_CHANGE = 'LISTING_FILTER_TYPE_CHANGE'
 export const LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE = 'LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE'
 export const LISTING_FILTER_YEAR_BUILT_CHANGE = 'LISTING_FILTER_YEAR_BUILT_CHANGE'
@@ -8,17 +8,17 @@ export const LISTING_FILTER_GENERIC_CHANGE = 'LISTING_FILTER_GENERIC_CHANGE'
 
 export const changePriceListingFilter = (priceMin, priceMax) => ({
   type: LISTING_FILTER_PRICE_CHANGE,
-  payload: { priceMin, priceMax }
+  payload: { min: priceMin, max: priceMax }
 })
 
-export const changeBedroomListingFilter = (bedroomsMin, bedroomsMax) => ({
-  type: LISTING_FILTER_BEDROOM_CHANGE,
-  payload: { bedroomsMin, bedroomsMax }
+export const changeBedroomsListingFilter = (bedroomsMin, bedroomsMax) => ({
+  type: LISTING_FILTER_BEDROOMS_CHANGE,
+  payload: { min: bedroomsMin, max: bedroomsMax }
 })
 
-export const changeBathroomListingFilter = (bathroomsMin, bathroomsMax) => ({
-  type: LISTING_FILTER_BATHROOM_CHANGE,
-  payload: { bathroomsMin, bathroomsMax }
+export const changeBathroomsListingFilter = (bathroomsMin, bathroomsMax) => ({
+  type: LISTING_FILTER_BATHROOMS_CHANGE,
+  payload: { min: bathroomsMin, max: bathroomsMax }
 })
 
 export const changeTypeListingFilter = (type) => ({
@@ -33,7 +33,7 @@ export const changeResidentialTypeListingFilter = (residentialType) => ({
 
 export const changeYearBuiltListingFilter = (yearBuiltMin, yearBuiltMax) => ({
   type: LISTING_FILTER_TYPE_CHANGE,
-  payload: { yearBuiltMin, yearBuiltMax }
+  payload: { min: yearBuiltMin, max: yearBuiltMax }
 })
 
 export const changeListingFilter = (filterState) => ({

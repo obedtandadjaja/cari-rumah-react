@@ -1,9 +1,8 @@
 .filterContainer {
-    flex: 1 2 60px;
-    overflow: hidden;
+    flex: 0 2 60px;
     height: 32px;
     margin-right: 5px;
-    max-width: 109px;
+    min-width: 109px;
 }
 
 button.filterButton {
