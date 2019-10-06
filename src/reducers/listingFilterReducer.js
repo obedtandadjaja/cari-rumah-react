@@ -10,7 +10,10 @@ import {
 } from './../actions/listingFilterActions'
 
 const initialState = Map({
-  price: {}
+  price: {},
+  bedrooms: {},
+  bathrooms: {},
+  yearBuilt: {},
 })
 
 export default function listingFilterReducer(state=initialState, action) {
@@ -23,11 +26,11 @@ export default function listingFilterReducer(state=initialState, action) {
       })
     case LISTING_FILTER_BEDROOM_CHANGE:
       return state.merge({
-        bedroomsMin: action.payload
+        bedrooms: action.payload
       })
     case LISTING_FILTER_BATHROOM_CHANGE:
       return state.merge({
-        bathroomsMin: action.payload
+        bathrooms: action.payload
       })
     case LISTING_FILTER_TYPE_CHANGE:
       return state.merge({
@@ -39,7 +42,7 @@ export default function listingFilterReducer(state=initialState, action) {
       })
     case LISTING_FILTER_YEAR_BUILT_CHANGE:
       return state.merge({
-        yearBuiltMin: action.payload
+        yearBuilt: action.payload
       })
     default:
       return state

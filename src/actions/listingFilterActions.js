@@ -11,14 +11,14 @@ export const changePriceListingFilter = (priceMin, priceMax) => ({
   payload: { priceMin, priceMax }
 })
 
-export const changeBedroomListingFilter = (bedroomsMin) => ({
+export const changeBedroomListingFilter = (bedroomsMin, bedroomsMax) => ({
   type: LISTING_FILTER_BEDROOM_CHANGE,
-  payload: { bedroomsMin }
+  payload: { bedroomsMin, bedroomsMax }
 })
 
-export const changeBathroomListingFilter = (bathroomsMin) => ({
+export const changeBathroomListingFilter = (bathroomsMin, bathroomsMax) => ({
   type: LISTING_FILTER_BATHROOM_CHANGE,
-  payload: { bathroomsMin }
+  payload: { bathroomsMin, bathroomsMax }
 })
 
 export const changeTypeListingFilter = (type) => ({
@@ -31,9 +31,9 @@ export const changeResidentialTypeListingFilter = (residentialType) => ({
   payload: { residentialType }
 })
 
-export const changeYearBuiltListingFilter = (yearBuiltMin) => ({
+export const changeYearBuiltListingFilter = (yearBuiltMin, yearBuiltMax) => ({
   type: LISTING_FILTER_TYPE_CHANGE,
-  payload: { yearBuiltMin }
+  payload: { yearBuiltMin, yearBuiltMax }
 })
 
 export const changeListingFilter = (filterState) => ({

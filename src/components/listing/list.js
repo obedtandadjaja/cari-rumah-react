@@ -7,8 +7,8 @@ import './list.css'
 import ListingItem from './item'
 
 const QUERY = gql`
-  query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput) {
-    listingsByAddressLatLongRectangle(ne: $ne, sw: $sw, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination) {
+  query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput, filter: ListingFilter) {
+    listingsByAddressLatLongRectangle(ne: $ne, sw: $sw, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination, filter: $filter) {
       edges {
         node {
           id
@@ -48,6 +48,15 @@ function ListingList(props) {
           batchSize: 20,
           after: null
         }
+      },
+      filter: {
+        price_idr_min: props.priceFilter.min,
+        price_idr_max: props.priceFilter.max,
+        num_bedrooms_min: props.bedroomsMinFilter,
+        num_bathrooms_min: props.bathroomsMinFilter,
+        year_built_min: props.yearBuiltMinFilter,
+        type: props.typeFilter,
+        residential_type: props.residentialTypeFilter,
       }
     }
   )
@@ -83,11 +92,11 @@ function ListingList(props) {
 
 const mapStateToProps = state => ({
   priceFilter: state.listingFilter.getIn(['price']),
-  bedroomsMinFilter: state.listingFilter.getIn(['bedroomsMin']),
-  bathroomsMinFilter: state.listingFilter.getIn(['bathroomsMin']),
+  bedroomsFilter: state.listingFilter.getIn(['bedrooms']),
+  bathroomsFilter: state.listingFilter.getIn(['bathrooms']),
   typeFilter: state.listingFilter.getIn(['type']),
   residentialTypeFilter: state.listingFilter.getIn(['residentialType']),
-  yearBuiltMinFilter: state.listingFilter.getIn(['yearBuiltMin']),
+  yearBuiltFilter: state.listingFilter.getIn(['yearBuilt']),
 })
 
 export default connect(mapStateToProps, {})(ListingList)
