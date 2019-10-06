@@ -7,7 +7,7 @@ import './list.css'
 import ListingItem from './item'
 
 const QUERY = gql`
-  query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput, filter: ListingFilter) {
+  query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput, $filter: ListingFilter) {
     listingsByAddressLatLongRectangle(ne: $ne, sw: $sw, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination, filter: $filter) {
       edges {
         node {
@@ -47,18 +47,22 @@ function ListingList(props) {
         pagination: {
           batchSize: 20,
           after: null
-        }
+        },
+        filter: {
+          price_idr_min: props.priceFilter.min,
+          price_idr_max: props.priceFilter.max,
+          num_bedrooms_min: props.bedroomsFilter.min,
+          num_bedrooms_max: props.bedroomsFilter.max,
+          num_bathrooms_min: props.bathroomsFilter.min,
+          num_bathrooms_max: props.bathroomsFilter.max,
+          year_built_min: props.yearBuiltFilter.min,
+          year_built_max: props.yearBuiltFilter.max,
+          type: props.typeFilter,
+          residential_type: props.residentialTypeFilter,
+        },
       },
-      filter: {
-        price_idr_min: props.priceFilter.min,
-        price_idr_max: props.priceFilter.max,
-        num_bedrooms_min: props.bedroomsMinFilter,
-        num_bathrooms_min: props.bathroomsMinFilter,
-        year_built_min: props.yearBuiltMinFilter,
-        type: props.typeFilter,
-        residential_type: props.residentialTypeFilter,
-      }
-    }
+    },
+    [props]
   )
 
   if (error) {

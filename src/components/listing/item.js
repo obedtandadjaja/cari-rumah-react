@@ -10,7 +10,7 @@ class ListingItem extends React.Component {
       <div className='listingItem'>
         <ListingItemPicture picture_url={this.props.listing.display_picture_url} />
         <div className='listingItemBody'>
-          <span className='listingItemPrice'>Rp. {(this.props.listing.price_idr/100).toLocaleString()}</span>
+          <span className='listingItemPrice'>Rp. {(this.props.listing.price_idr).toLocaleString('id-ID')}</span>
           <div className='listingItemStatsContainer'>
             {
               this.props.listing.num_bedrooms &&

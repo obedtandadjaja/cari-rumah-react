@@ -6,12 +6,12 @@ function FilterInputPrice(props) {
   const [price, setPrice] = useState({})
 
   function handleChangePriceMin(event) {
-    setPrice({ ...price, min: event.target.value })
+    setPrice({ ...price, min: parseInt(event.target.value) })
     props.onChange('price', price)
   }
 
   function handleChangePriceMax(event) {
-    setPrice({ ...price, max: event.target.value })
+    setPrice({ ...price, max: parseInt(event.target.value.parseInt) })
     props.onChange('price', price)
   }
 
