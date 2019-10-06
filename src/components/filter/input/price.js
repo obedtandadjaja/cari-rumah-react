@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import './price.css'
 
@@ -6,14 +6,28 @@ function FilterInputPrice(props) {
   const [price, setPrice] = useState({})
 
   function handleChangePriceMin(event) {
+    if (!event.target.value) {
+      const { min, ...priceRemaining } = price
+      setPrice(priceRemaining)
+      return
+    }
+
     setPrice({ ...price, min: parseInt(event.target.value) })
-    props.onChange('price', price)
   }
 
   function handleChangePriceMax(event) {
+    if (!event.target.value) {
+      const { max, ...priceRemaining } = price
+      setPrice(priceRemaining)
+      return
+    }
+
     setPrice({ ...price, max: parseInt(event.target.value.parseInt) })
-    props.onChange('price', price)
   }
+
+  useEffect(() => {
+    props.onChange('price', price)
+  }, [price])
 
   return (
     <div className='filterInputWrapper'>
