@@ -4,15 +4,15 @@ import FilterContainer from './container'
 import FilterInputPrice from './input/price'
 
 function FilterPriceContainer(props) {
-  const filterButtonTextResolver = (props) => {
-    if (props.price) {
-      if (props.price.min && !props.price.max) {
-        return '> ' + props.price.min
-      } else if (!props.price.min && props.price.max) {
-        return '< ' + props.price.max
-      } else if (props.price.min && props.price.max) {
-        let prices = [props.price.min, props.price.max]
+  const filterButtonTextResolver = (values) => {
+    if (values.price) {
+      if (values.price.min && values.price.max) {
+        let prices = [values.price.min, values.price.max]
         return prices.join(' - ')
+      } else if (values.price.min && !values.price.max) {
+        return '> ' + values.price.min
+      } else if (!values.price.min && values.price.max) {
+        return '< ' + values.price.max
       }
     }
     return 'Harga'

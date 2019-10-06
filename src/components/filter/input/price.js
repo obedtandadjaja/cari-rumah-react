@@ -22,7 +22,7 @@ function FilterInputPrice(props) {
       return
     }
 
-    setPrice({ ...price, max: parseInt(event.target.value.parseInt) })
+    setPrice({ ...price, max: parseInt(event.target.value) })
   }
 
   useEffect(() => {

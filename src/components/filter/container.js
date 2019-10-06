@@ -25,7 +25,7 @@ function FilterContainer(props) {
   return (
     <div className='filterContainer'>
       <button className='filterButton' onClick={filterButtonOnClick}>
-        { props.filterButtonTextResolver(props) }
+        { props.filterButtonTextResolver(props.listingFilter) }
       </button>
       <FilterPopover active={active}>
         {
@@ -43,6 +43,9 @@ function FilterContainer(props) {
   )
 }
 
+const mapStateToProps = state => ({
+  listingFilter: state.listingFilter.toJS(),
+})
 const mapDispatchToProps = { changeListingFilter }
 
-export default connect(null, mapDispatchToProps)(FilterContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(FilterContainer)
