@@ -22,3 +22,8 @@ button.filterButton {
     outline: 0;
     cursor: pointer;
 }
+
+button.filterButton.active {
+    background: #006AFF;
+    color: #fff;
+}

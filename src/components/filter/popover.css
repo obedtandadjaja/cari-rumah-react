@@ -14,12 +14,19 @@
 .filterPopoverArrow {
     border-style: solid;
     border-width: 0 8px 8px;
-    display: inline-block;
+    display: none;
     position: absolute;
     top: -8px;
     left: 54px;
+    right: auto;
     content: '';
     border-color: transparent transparent #fff;
+    visiblility: none;
+}
+
+.filterPopoverArrow:nth-child(n+2) {
+    right: 54px;
+    left: auto;
 }
 
 .filterPopoverActionWrapper {

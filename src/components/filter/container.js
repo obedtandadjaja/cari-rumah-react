@@ -24,7 +24,9 @@ function FilterContainer(props) {
 
   return (
     <div className='filterContainer'>
-      <button className='filterButton' onClick={filterButtonOnClick}>
+      <button
+        className={ active ? 'filterButton active' : 'filterButton' }
+        onClick={filterButtonOnClick}>
         { props.filterButtonTextResolver(props.listingFilter) }
       </button>
       <FilterPopover active={active}>
