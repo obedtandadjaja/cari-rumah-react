@@ -6,7 +6,7 @@ import FilterPopover from './popover'
 import { changeListingFilter } from './../../actions/listingFilterActions'
 
 function FilterContainer(props) {
-  const refComponent = useRef(null)
+  const refComponent = useRef()
   const [active, setActive] = useState(false)
   const [values, setValues] = useState(props.listingFilter)
   OutsideClickNotifier(
