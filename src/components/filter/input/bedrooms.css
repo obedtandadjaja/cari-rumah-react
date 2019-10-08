@@ -8,6 +8,7 @@
     display: inline-block;
     background-color: #fff;
     border: solid 1px #A7A6AB;
+    border-left: none;
     padding: 10px 15px;
     cursor: pointer;
 }
@@ -19,6 +20,7 @@
 }
 
 .filterPill:first-child {
+    border-left: solid 1px #A7A6AB;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }

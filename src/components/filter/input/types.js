@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import './types.css'
 import { changeTypeListingFilter } from './../../../actions/listingFilterActions'
 
 function FilterInputTypes(props) {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { connect } from 'react-redux'
 
-import './residentialTypes.css'
 import { changeResidentialTypeListingFilter } from './../../../actions/listingFilterActions'
 
 function FilterInputResidentialTypes(props) {
