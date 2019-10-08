@@ -65,8 +65,6 @@ function ListingList(props) {
     [props]
   )
 
-  console.log(props)
-
   if (error) {
     return (<p>{ JSON.stringify(error) }</p>)
     /* return (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>) */

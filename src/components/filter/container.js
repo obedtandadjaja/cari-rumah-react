@@ -27,8 +27,6 @@ function FilterContainer(props) {
     setActive(false)
   }
 
-  console.log(props.listingFilter)
-
   return (
     <div className='filterContainer' ref={refComponent}>
       <button
