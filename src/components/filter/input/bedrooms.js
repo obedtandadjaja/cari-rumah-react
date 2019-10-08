@@ -19,6 +19,7 @@ function FilterInputBedrooms(props) {
   for (let i = 1; i <= 5; i++) {
     pills.push(
       <div
+        key={i}
         id={i}
         className={bedrooms.min === i ? 'filterPill selected' : 'filterPill'}
         onClick={onBedroomFilterClick}>

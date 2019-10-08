@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { connect } from 'react-redux'
 
 import './container.css'
@@ -6,8 +6,13 @@ import FilterPopover from './popover'
 import { changeListingFilter } from './../../actions/listingFilterActions'
 
 function FilterContainer(props) {
+  const refComponent = useRef(null)
   const [active, setActive] = useState(false)
   const [values, setValues] = useState(props.listingFilter)
+  OutsideClickNotifier(
+    (event) => setActive(false),
+    refComponent
+  )
 
   function filterButtonOnClick(event) {
     setActive(!active)
@@ -23,7 +28,7 @@ function FilterContainer(props) {
   }
 
   return (
-    <div className='filterContainer'>
+    <div className='filterContainer' ref={refComponent}>
       <button
         className={ active ? 'filterButton active' : 'filterButton' }
         onClick={filterButtonOnClick}>
@@ -46,6 +51,23 @@ function FilterContainer(props) {
       </FilterPopover>
     </div>
   )
+}
+
+function OutsideClickNotifier(func, refComponent) {
+  useEffect(() => {
+    function handleClick(event) {
+      refComponent.current
+      && !refComponent.current.contains(event.target)
+      && func(event)
+    }
+
+    if (refComponent.current) {
+      document.addEventListener('click', handleClick)
+    }
+
+    // on unmount, remove the listener
+    return () => document.removeEventListener('click', handleClick)
+  }, [func, refComponent])
 }
 
 const mapStateToProps = state => ({
