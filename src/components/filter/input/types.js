@@ -5,7 +5,7 @@ import './types.css'
 import { changeTypeListingFilter } from './../../../actions/listingFilterActions'
 
 function FilterInputTypes(props) {
-  const [listingType, setListingType] = useState(props.listingFilter.type)
+  const [type, setListingType] = useState(props.listingFilter.type)
   const POSSIBLE_TYPES = ['Kost', 'Jual']
 
   function onTypeFilterClick(event) {
@@ -13,8 +13,8 @@ function FilterInputTypes(props) {
   }
 
   useEffect(() => {
-    props.changeTypeListingFilter(listingType)
-  }, [listingType])
+    props.changeTypeListingFilter(type)
+  }, [type])
 
   let pills = []
   POSSIBLE_TYPES.map(possibleType =>
@@ -22,7 +22,7 @@ function FilterInputTypes(props) {
       <div
         key={possibleType}
         id={possibleType}
-        className={possibleType === listingType ? 'filterPill selected' : 'filterPill' }
+        className={possibleType === type ? 'filterPill selected' : 'filterPill' }
         onClick={onTypeFilterClick}>
         { possibleType }
       </div>
