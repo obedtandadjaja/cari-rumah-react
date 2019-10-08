@@ -34,11 +34,11 @@ export default function listingFilterReducer(state=initialState, action) {
       })
     case LISTING_FILTER_TYPE_CHANGE:
       return state.merge({
-        type: action.payload
+        type: action.payload.type
       })
     case LISTING_FILTER_RESIDENTIAL_TYPE_CHANGE:
       return state.merge({
-        residentialType: action.payload
+        residentialType: action.payload.residentialType
       })
     case LISTING_FILTER_YEAR_BUILT_CHANGE:
       return state.merge({

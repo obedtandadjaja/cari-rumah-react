@@ -5,6 +5,7 @@ import Autocomplete from './../autocomplete/autocomplete'
 import FilterPriceContainer from './../filter/priceContainer'
 import FilterBedroomsContainer from './../filter/bedroomsContainer'
 import FilterBathroomsContainer from './../filter/bathroomsContainer'
+import FilterTypesContainer from './../filter/typesContainer'
 
 function FilterList(props) {
   return (
@@ -13,6 +14,7 @@ function FilterList(props) {
       <FilterPriceContainer />
       <FilterBedroomsContainer />
       <FilterBathroomsContainer />
+      <FilterTypesContainer />
     </div>
   )
 }
