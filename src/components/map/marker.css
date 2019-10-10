@@ -1,0 +1,15 @@
+.mapMarker {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #fff;
+    transform: translate(0,2px);
+    box-shadow: 0 2px 2px rgba(0,0,0,.5);
+    color: #fff;
+    font-size: 10px;
+    text-align: center;
+    pointer-events: auto;
+    background-color: rgb(0,0,0);
+}
