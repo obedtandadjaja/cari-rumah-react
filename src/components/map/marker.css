@@ -13,3 +13,8 @@
     pointer-events: auto;
     background-color: rgb(0,0,0);
 }
+
+.mapMarker:hover {
+    background-color: rgba(255,0,0,0.7);
+    z-index: 999;
+}
