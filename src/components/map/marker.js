@@ -4,7 +4,9 @@ import './marker.css'
 
 function MapMarker(props) {
   return (
-    <div className='mapMarker'>
+    <div
+      id={ `listing_marker_${props.listingId}` }
+      className='mapMarker'>
     </div>
   )
 }

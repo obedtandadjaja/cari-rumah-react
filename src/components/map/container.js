@@ -64,6 +64,7 @@ function MapContainer(props) {
     data.listingsByAddressLatLongRectangle.edges.forEach(listing =>
       listings.push(
         <MapMarker
+          listingId={listing.node.id}
           key={listing.node.id}
           lat={listing.node.address.latitude}
           lng={listing.node.address.longitude} />
