@@ -1,6 +1,7 @@
 .filterList {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
     padding: 10px 22px 10px 22px;
 }
