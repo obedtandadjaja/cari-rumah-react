@@ -1,6 +1,14 @@
 .mapContainer {
     height: 100%;
     width: 100%;
+    position: relative;
+}
+
+.mapContainer .mapAutocompleteWrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
 }
 
 @media (max-width: 900px) {
