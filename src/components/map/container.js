@@ -65,6 +65,7 @@ function MapContainer(props) {
       listings.push(
         <MapMarker
           listingId={listing.node.id}
+          listingPriceIdr={listing.node.price_idr}
           key={listing.node.id}
           lat={listing.node.address.latitude}
           lng={listing.node.address.longitude} />
