@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/header/header'
 import HomePage from './pages/home'
 import SearchPage from './pages/search'
+import ListingPage from './pages/listing'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <div className='AppBody'>
           <Route exact path='/' component={HomePage} />
           <Route path='/search' component={SearchPage} />
+          <Route path='/listing' component={ListingPage} />
         </div>
       </BrowserRouter>
     </div>

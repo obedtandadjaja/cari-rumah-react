@@ -6,32 +6,32 @@ import { connect } from 'react-redux'
 import './list.css'
 import ListingItem from './item'
 
-const QUERY = gql`
-  query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput, $filter: ListingFilter) {
-    listingsByAddressLatLongRectangle(ne: $ne, sw: $sw, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination, filter: $filter) {
-      edges {
-        node {
-          id
-          num_bedrooms
-          num_bathrooms
-          lot_size_m2
-          price_idr
-          display_picture_url
-          residential_type
-          type
-          address {
-            full_address
+function ListingList(props) {
+  const QUERY = gql`
+    query listings($ne: Coordinate!, $sw: Coordinate!, $sortBy: ListingSortBy, $sortDirection: SortDirection, $pagination: PaginationInput, $filter: ListingFilter) {
+      listingsByAddressLatLongRectangle(ne: $ne, sw: $sw, sortBy: $sortBy, sortDirection: $sortDirection, pagination: $pagination, filter: $filter) {
+        edges {
+          node {
+            id
+            num_bedrooms
+            num_bathrooms
+            lot_size_m2
+            price_idr
+            display_picture_url
+            residential_type
+            type
+            address {
+              full_address
+            }
           }
         }
-      }
-      pageInfo {
-        endCursor
+        pageInfo {
+          endCursor
+        }
       }
     }
-  }
-`
+  `
 
-function ListingList(props) {
   const { error, data } = useQuery(
     QUERY,
     {
