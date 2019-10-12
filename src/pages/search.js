@@ -21,7 +21,7 @@ function Search(props) {
     body = (<PropagateLoader loading={true} />)
   } else if (props.placeGeometryError) {
     body = (<span role='img'>Waduh payah nih websitenya ada yang eror... 😭</span>)
-  } else if (props.placeGeometry) {
+  } else if (props.placeGeometry && props.placeGeometry.location) {
     body = (
       <>
         <MapContainer

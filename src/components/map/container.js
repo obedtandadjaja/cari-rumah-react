@@ -56,6 +56,17 @@ function MapContainer(props) {
     }
   )
 
+  function mapOptions(maps) {
+    return {
+      mapTypeControl: true,
+      fullscreenControl: false,
+      mapTypeControlOptions: {
+        position: maps.ControlPosition.TOP_RIGHT,
+        style: maps.MapTypeControlStyle.DROPDOWN_MENU,
+      },
+    }
+  }
+
   function onMapChange(event) {
     props.changeMapBounds(event.marginBounds)
   }
@@ -90,7 +101,8 @@ function MapContainer(props) {
           lng: props.long
         }}
         defaultZoom={13}
-        onChange={onMapChange}>
+        onChange={onMapChange}
+        options={mapOptions}>
         { listings }
       </GoogleMapReact>
     </div>
