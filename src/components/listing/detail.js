@@ -4,6 +4,7 @@ import gql from 'graphql-tag'
 import { PropagateLoader } from 'react-spinners'
 
 import './detail.css'
+import ListingAddress from './address'
 import ListingInfo from './info'
 
 function ListingDetail(props) {
@@ -60,23 +61,7 @@ function ListingDetail(props) {
     body = (
       <>
         <div className='listingDetailHeader'>
-          <div className='listingAddress'>
-            <div className='listingAddressStreet'>
-              { data.listing.address.address_1 } { data.listing.address.address_2 }
-            </div>
-            <div className='listingAddressVillage'>
-              { data.listing.address.administrative_area_level_4 }
-            </div>
-            <div className='listingAddressDistrict'>
-              { data.listing.address.administrative_area_level_3 }
-            </div>
-            <div className='listingAddressRegency'>
-              { data.listing.address.administrative_area_level_2 }
-            </div>
-            <div className='listingAddressProvince'>
-              { data.listing.address.administrative_area_level_1 } { data.listing.address.zip_code }
-            </div>
-          </div>
+          <ListingAddress { ...data.listing.address } />
           <div className='listingActions'>
             <div>
               Simpan Listing
