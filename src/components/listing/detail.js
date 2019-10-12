@@ -61,7 +61,21 @@ function ListingDetail(props) {
       <>
         <div className='listingDetailHeader'>
           <div className='listingAddress'>
-            .listingAddress
+            <div className='listingAddressStreet'>
+              { data.listing.address.address_1 } { data.listing.address.address_2 }
+            </div>
+            <div className='listingAddressVillage'>
+              { data.listing.address.administrative_area_level_4 }
+            </div>
+            <div className='listingAddressDistrict'>
+              { data.listing.address.administrative_area_level_3 }
+            </div>
+            <div className='listingAddressRegency'>
+              { data.listing.address.administrative_area_level_2 }
+            </div>
+            <div className='listingAddressProvince'>
+              { data.listing.address.administrative_area_level_1 } { data.listing.address.zip_code }
+            </div>
           </div>
           <div className='listingActions'>
             <div>

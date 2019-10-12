@@ -12,3 +12,15 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+.listingAddress {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.listingAddress .listingAddressStreet {
+    font-weight: 600;
+    font-size: 1rem;
+}
