@@ -2,6 +2,7 @@ import React from 'react'
 import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
 import { PropagateLoader } from 'react-spinners'
+import ImageGallery from 'react-image-gallery'
 
 import './detail.css'
 import ListingAddress from './address'
@@ -76,6 +77,9 @@ function ListingDetail(props) {
         </div>
         <div className='listingDetailBody'>
           <ListingInfo {...data.listing} />
+          <div className='listingDescription'>
+            { data.listing.description }
+          </div>
         </div>
       </>
     )
