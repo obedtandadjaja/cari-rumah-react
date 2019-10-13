@@ -6,9 +6,9 @@ import { convertToPrice } from './../../helpers/priceUtil'
 function ListingInfo(props) {
   let infos = []
 
-  function constructListingInfo(title, value, additionalInfo) {
+  function constructListingInfo(key, title, value, additionalInfo) {
     return (
-      <div className='listingInfoItem'>
+      <div key={key} className='listingInfoItem'>
         <div className='listingInfoTitle'>
           { title }
         </div>
@@ -34,27 +34,27 @@ function ListingInfo(props) {
       additionalInfo = `${pricePerLotSize} / m2`
     }
 
-    infos.push(constructListingInfo('Harga', value, additionalInfo))
+    infos.push(constructListingInfo('listing_info_item_price', 'Harga', value, additionalInfo))
   }
 
   if (props.num_bedrooms) {
-    infos.push(constructListingInfo('Kamar', props.num_bedrooms))
+    infos.push(constructListingInfo('listing_info_item_num_bedrooms', 'Kamar', props.num_bedrooms))
   }
 
   if (props.num_bathrooms) {
-    infos.push(constructListingInfo('Toilet', props.num_bathrooms))
+    infos.push(constructListingInfo('listing_info_item_num_bathrooms', 'Toilet', props.num_bathrooms))
   }
 
   if (props.num_stories) {
-    infos.push(constructListingInfo('Lantai', props.num_stories))
+    infos.push(constructListingInfo('listing_info_item_num_stories', 'Lantai', props.num_stories))
   }
 
   if (props.lot_size_m2) {
-    infos.push(constructListingInfo('Area', `${props.lot_size_m2} m2`))
+    infos.push(constructListingInfo('listing_info_item_lot_size', 'Area', `${props.lot_size_m2} m2`))
   }
 
   if (props.year_built) {
-    infos.push(constructListingInfo('Tahun Jadi', props.year_built))
+    infos.push(constructListingInfo('listing_info_item_year_built', 'Tahun Jadi', props.year_built))
   }
 
   return (

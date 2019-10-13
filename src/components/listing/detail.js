@@ -27,8 +27,10 @@ function ListingDetail(props) {
         address {
           address_1
           address_2
-          city
-          province
+          administrative_area_level_4
+          administrative_area_level_3
+          administrative_area_level_2
+          administrative_area_level_1
           zip_code
           longitude
           latitude
