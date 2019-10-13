@@ -5,7 +5,6 @@ html, body, #root {
     padding: 0;
     font-family: Libre Franklin,-apple-system,BlinkMacSystemFont,Roboto,Droid Sans,Helvetica,Arial,sans-serif;
     font-size: 93.75%;
-    overflow: hidden;
 }
 
 .App {

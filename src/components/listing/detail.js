@@ -3,6 +3,7 @@ import { useQuery } from 'react-apollo'
 import gql from 'graphql-tag'
 import { PropagateLoader } from 'react-spinners'
 import ImageGallery from 'react-image-gallery'
+import 'react-image-gallery/styles/css/image-gallery.css'
 
 import './detail.css'
 import ListingAddress from './address'
@@ -22,6 +23,7 @@ function ListingDetail(props) {
         price_idr
         description
         display_picture_url
+        picture_urls
         residential_type
         type
         address {
@@ -44,7 +46,6 @@ function ListingDetail(props) {
       }
     }
   `
-
   const { error, data, loading } = useQuery(
     QUERY,
     {
@@ -61,6 +62,22 @@ function ListingDetail(props) {
   } else if (error) {
     console.log(error)
   } else {
+    /* const images = data.listing.picture_urls.map(picture_url => ({ original: picture_url })) */
+    const images = [
+      {
+        original: 'https://ssl.cdn-redfin.com/photo/8/mbpaddedwide/739/genMid.ML81765739_39_3.jpg'
+      },
+      {
+        original: 'https://kenikin.com/w/luxury-home-Wallpaper-number-Xfw.jpg'
+      },
+      {
+        original: 'http://www.hdnicewallpapers.com/Walls/Big/House%20and%20Bungalow/Luxury_Home_HD_Photo.jpg'
+      },
+      {
+        original: 'https://live.staticflickr.com/2939/14809337183_77e551331e_b.jpg'
+      }
+    ]
+
     body = (
       <>
         <div className='listingDetailHeader'>
@@ -78,6 +95,13 @@ function ListingDetail(props) {
           </div>
         </div>
         <div className='listingDetailBody'>
+          <ImageGallery
+            lazyLoad={true}
+            showPlayButton={false}
+            showBullets={true}
+            showThumbnails={false}
+            showIndex={true}
+            items={images} />
           <ListingInfo {...data.listing} />
           <div className='listingDescription'>
             { data.listing.description }
