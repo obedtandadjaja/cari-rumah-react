@@ -1,10 +1,13 @@
-.filterPillList {
-    margin-top: 10px;
-    flex: 1 2 60px;
+.filterInputTitle {
+    margin-bottom: 10px;
+}
+
+.pillList {
+    display: flex;
     flex-direction: row;
 }
 
-.filterPill {
+.pill {
     display: inline-block;
     background-color: #fff;
     border: solid 1px #A7A6AB;
@@ -13,19 +16,19 @@
     cursor: pointer;
 }
 
-.filterPill.selected {
+.pill.selected {
     background-color: #006AFF;
     border-color: #006AFF;
     color: #fff;
 }
 
-.filterPill:first-child {
+.pill:first-child {
     border-left: solid 1px #A7A6AB;
     border-top-left-radius: 3px;
     border-bottom-left-radius: 3px;
 }
 
-.filterPill:last-child {
+.pill:last-child {
     border-top-right-radius: 3px;
     border-bottom-right-radius: 3px;
 }

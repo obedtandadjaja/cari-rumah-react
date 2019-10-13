@@ -21,7 +21,7 @@ function FilterInputResidentialTypes(props) {
       <div
         key={possibleResidentialType}
         id={possibleResidentialType}
-        className={possibleResidentialType === residentialType ? 'filterPill selected' : 'filterPill' }
+        className={possibleResidentialType === residentialType ? 'pill selected' : 'pill' }
         onClick={onResidentialTypeFilterClick}>
         { possibleResidentialType }
       </div>
@@ -31,7 +31,7 @@ function FilterInputResidentialTypes(props) {
   return (
     <div className='filterInputWrapper'>
       <span className='filterInputTitle'>Tipe Listing</span>
-      <div className='filterPillList'>
+      <div className='pillList'>
         { pills }
       </div>
     </div>

@@ -1,53 +1,18 @@
 import React from 'react'
 import { useQuery } from 'react-apollo'
-import gql from 'graphql-tag'
 import { PropagateLoader } from 'react-spinners'
 import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
 
 import './detail.css'
+import { QUERY_LISTING_BY_ID } from './../../graphqlQuery'
+import ListingActions from './actions'
 import ListingAddress from './address'
 import ListingInfo from './info'
 
 function ListingDetail(props) {
-  const QUERY = gql`
-    query listing($id: ID!) {
-      listing(id: $id) {
-        id
-        num_bedrooms
-        num_bathrooms
-        num_parking_spots
-        lot_size_m2
-        num_stories
-        year_built
-        price_idr
-        description
-        display_picture_url
-        picture_urls
-        residential_type
-        type
-        address {
-          address_1
-          address_2
-          administrative_area_level_4
-          administrative_area_level_3
-          administrative_area_level_2
-          administrative_area_level_1
-          zip_code
-          longitude
-          latitude
-          full_address
-        }
-        user {
-          name
-          email
-          phone
-        }
-      }
-    }
-  `
   const { error, data, loading } = useQuery(
-    QUERY,
+    QUERY_LISTING_BY_ID,
     {
       variables: {
         id: props.id
@@ -81,18 +46,7 @@ function ListingDetail(props) {
     body = (
       <>
         <div className='listingDetailHeader'>
-          <ListingAddress { ...data.listing.address } />
-          <div className='listingActions'>
-            <div>
-              Simpan Listing
-            </div>
-            <div>
-              Kontak Pemilik
-            </div>
-            <div>
-              Kirim Listing
-            </div>
-          </div>
+          <ListingActions />
         </div>
         <div className='listingDetailBody'>
           <ImageGallery
@@ -103,6 +57,7 @@ function ListingDetail(props) {
             showIndex={true}
             items={images} />
           <ListingInfo {...data.listing} />
+          <ListingAddress { ...data.listing.address } />
           <div className='listingDescription'>
             { data.listing.description }
           </div>

@@ -20,7 +20,7 @@ function FilterInputBathrooms(props) {
       <div
         key={i}
         id={i}
-        className={bathrooms.min === i ? 'filterPill selected' : 'filterPill'}
+        className={bathrooms.min === i ? 'pill selected' : 'pill'}
         onClick={onBedroomFilterClick}>
         {i}+
       </div>
@@ -30,7 +30,7 @@ function FilterInputBathrooms(props) {
   return (
     <div className='filterInputWrapper'>
       <span className='filterInputTitle'>Toilet</span>
-      <div className='filterPillList'>
+      <div className='pillList'>
         { pills }
       </div>
     </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './address.css'
+
 function ListingAddress(props) {
   let addressComponents = []
 

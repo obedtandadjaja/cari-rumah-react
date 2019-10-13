@@ -16,23 +16,17 @@
 }
 
 .listingDetailHeader {
-    width: calc(100% - 40px);
+    width: calc(100% - 20px);
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-end;
+    margin: 10px 10px;
+}
+
+.listingDescription {
     margin: 10px 20px;
-}
-
-.listingAddress {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.listingAddress .listingAddressStreet {
-    font-weight: 600;
-    font-size: 1rem;
+    max-width: 600px;
+    line-height: 1.75;
 }
 
 .image-gallery {

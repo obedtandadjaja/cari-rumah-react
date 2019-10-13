@@ -21,7 +21,7 @@ function FilterInputTypes(props) {
       <div
         key={possibleType}
         id={possibleType}
-        className={possibleType === type ? 'filterPill selected' : 'filterPill' }
+        className={possibleType === type ? 'pill selected' : 'pill' }
         onClick={onTypeFilterClick}>
         { possibleType }
       </div>
@@ -31,7 +31,7 @@ function FilterInputTypes(props) {
   return (
     <div className='filterInputWrapper'>
       <span className='filterInputTitle'>Tipe Listing</span>
-      <div className='filterPillList'>
+      <div className='pillList'>
         { pills }
       </div>
     </div>
