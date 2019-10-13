@@ -8,9 +8,12 @@ function MapMarker(props) {
     <div
       id={ `listing_marker_${props.listingId}` }
       className='mapMarker'>
-      <div className='mapMarkerDetails'>
-        <span>{ convertToPriceShort(props.listingPriceIdr) }</span>
-      </div>
+      {
+        props.listingPriceIdr &&
+        <div className='mapMarkerDetails'>
+          <span>{ convertToPriceShort(props.listingPriceIdr) }</span>
+        </div>
+      }
     </div>
   )
 }

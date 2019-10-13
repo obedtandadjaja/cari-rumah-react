@@ -13,27 +13,10 @@ function ListingAddress(props) {
     )
   }
 
-  if (props.administrative_area_level_4) {
-    addressComponents.push(
-      <div key='listing_address_village' className='listingAddressVillage'>
-        { props.administrative_area_level_4 }
-      </div>
-    )
-  }
-
-  if (props.administrative_area_level_3) {
+  if (props.administrative_area_level_4 || props.administrative_area_level_3 || props.administrative_area_level_2) {
     addressComponents.push(
       <div key='listing_address_district' className='listingAddressDistrict'>
-        { props.administrative_area_level_3 }
-      </div>
-    )
-  }
-
-
-  if (props.administrative_area_level_2) {
-    addressComponents.push(
-      <div key='listing_address_regency' className='listingAddressRegency'>
-        { props.administrative_area_level_2 }
+        { props.administrative_area_level_4 }, { props.administrative_area_level_3 }, { props.administrative_area_level_2 }
       </div>
     )
   }

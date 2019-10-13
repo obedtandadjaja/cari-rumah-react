@@ -3,12 +3,14 @@ import { useQuery } from 'react-apollo'
 import { PropagateLoader } from 'react-spinners'
 import ImageGallery from 'react-image-gallery'
 import 'react-image-gallery/styles/css/image-gallery.css'
+import GoogleMapReact from 'google-map-react';
 
 import './detail.css'
 import { QUERY_LISTING_BY_ID } from './../../graphqlQuery'
 import ListingActions from './actions'
 import ListingAddress from './address'
 import ListingInfo from './info'
+import MapMarker from './../map/marker'
 
 function ListingDetail(props) {
   const { error, data, loading } = useQuery(
@@ -20,6 +22,16 @@ function ListingDetail(props) {
     },
     [props.id]
   )
+
+  function mapOptions(maps) {
+    return {
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+        position: maps.ControlPosition.TOP_RIGHT,
+        style: maps.MapTypeControlStyle.DROPDOWN_MENU,
+      },
+    }
+  }
 
   let body = null
   if (loading) {
@@ -57,10 +69,28 @@ function ListingDetail(props) {
             showIndex={true}
             items={images} />
           <ListingInfo {...data.listing} />
-          <ListingAddress { ...data.listing.address } />
           <div className='listingDescription'>
             { data.listing.description }
           </div>
+          <div className='mapContainerMini'>
+            <GoogleMapReact
+              bootstrapURLKeys={{
+                key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
+                language: 'id',
+                region: 'ind'
+              }}
+              defaultCenter={{
+                lat: data.listing.address.latitude,
+                lng: data.listing.address.longitude
+              }}
+              defaultZoom={16}
+              options={mapOptions}>
+              <MapMarker
+                lat={data.listing.address.latitude}
+                lng={data.listing.address.longitude} />
+            </GoogleMapReact>
+          </div>
+          <ListingAddress { ...data.listing.address } />
         </div>
       </>
     )

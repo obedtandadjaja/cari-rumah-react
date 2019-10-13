@@ -2,10 +2,24 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    border-top: solid 1px rgb(0,0,0);
+    background-color: rgba(0,0,0,0.05);
+    width: 610px;
+}
+
+@media (max-width: 690px) {
+    .listingAddress {
+        width: calc(100% - 40px);
+    }
 }
 
 .listingAddress .listingAddressStreet {
     font-weight: 600;
     font-size: 1rem;
+}
+
+.listingAddress .listingAddressDistrict {
+    margin-top: 5px;
 }

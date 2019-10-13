@@ -29,6 +29,18 @@
     line-height: 1.75;
 }
 
+.mapContainerMini {
+    height: 280px;
+    width: 650px;
+    margin-top: 10px;
+}
+
+@media (max-width: 690px) {
+    .mapContainerMini {
+        width: 100%;
+    }
+}
+
 .image-gallery {
     width: 100%;
 }
