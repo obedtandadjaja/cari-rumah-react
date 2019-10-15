@@ -29,7 +29,7 @@ function FilterInputBathrooms(props) {
 
   return (
     <div className='filterInputWrapper'>
-      <span className='filterInputTitle'>Toilet</span>
+      <div className='filterInputTitle'>Toilet</div>
       <div className='pillList'>
         { pills }
       </div>

@@ -6,7 +6,6 @@ import gql from 'graphql-tag'
 
 import './container.css'
 import { changeMapBounds } from './../../actions/mapChangeActions'
-import Autocomplete from './../autocomplete/autocomplete'
 import MapMarker from './marker'
 
 const QUERY = gql`
@@ -87,9 +86,6 @@ function MapContainer(props) {
 
   return (
     <div className='mapContainer'>
-      <div className='mapAutocompleteWrapper'>
-        <Autocomplete mini={true} />
-      </div>
       <GoogleMapReact
         bootstrapURLKeys={{
           key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,

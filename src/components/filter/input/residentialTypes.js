@@ -30,7 +30,7 @@ function FilterInputResidentialTypes(props) {
 
   return (
     <div className='filterInputWrapper'>
-      <span className='filterInputTitle'>Tipe Listing</span>
+      <div className='filterInputTitle'>Tipe Listing</div>
       <div className='pillList'>
         { pills }
       </div>

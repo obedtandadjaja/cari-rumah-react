@@ -2,12 +2,13 @@
     padding: 10px;
 }
 
-span.filterInputTitle {
+.filterInputTitle {
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .rangeInput {
-    padding: 10px 0;
+    padding-bottom: 10px;
 }
 
 .rangeInput input {

@@ -31,7 +31,7 @@ function FilterInputPrice(props) {
 
   return (
     <div className='filterInputWrapper'>
-      <span className='filterInputTitle'>Kisaran Harga</span>
+      <div className='filterInputTitle'>Kisaran Harga</div>
       <div className='rangeInput'>
         <input
           type='number'

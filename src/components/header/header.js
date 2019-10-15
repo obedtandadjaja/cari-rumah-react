@@ -2,9 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './header.css'
+import Autocomplete from './../autocomplete/autocomplete'
 import LinksContainer from './links/container'
 
-const mainLinks = [
+const userLinks = [
   {
     url: '#',
     text: 'Beli'
@@ -13,8 +14,6 @@ const mainLinks = [
     url: '#',
     text: 'Kos'
   },
-]
-const userLinks = [
   {
     url: '#',
     text: 'Buat Listing'
@@ -34,11 +33,13 @@ class Header extends React.Component {
     return (
       <header>
         <div className='header'>
-          <LinksContainer links={mainLinks} />
           <h1 className='temporaryTitle'>
             <Link to={{ pathname: '/' }}>
               Cari Rumah
             </Link>
+            <div className='headerAutocompleteWrapper'>
+              <Autocomplete mini={true} />
+            </div>
           </h1>
           <LinksContainer links={userLinks} />
         </div>
