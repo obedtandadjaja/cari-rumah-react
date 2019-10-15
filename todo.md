@@ -9,8 +9,6 @@ ListingDetail:
 - Save listing
 
 Search:
-- on button click of the marker - go to detail page
-- on button click of the listing - go to detail page
 - move autocomplete to header
 
 Features:
