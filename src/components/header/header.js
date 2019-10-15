@@ -34,7 +34,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className='header'>
+        <div className='header mainHeader'>
           <LinksContainer links={mainLinks} />
           <h1 className='temporaryTitle'>
             <Link to={{ pathname: '/' }}>

@@ -32,7 +32,7 @@ class Header extends React.Component {
   render() {
     return (
       <header>
-        <div className='header'>
+        <div className='header searchHeader'>
           <h1 className='temporaryTitle'>
             <Link to={{ pathname: '/' }}>
               Cari Rumah

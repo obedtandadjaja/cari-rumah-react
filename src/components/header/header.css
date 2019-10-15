@@ -28,3 +28,7 @@ h1.temporaryTitle > a {
 .headerAutocompleteWrapper {
     margin-left: 10px;
 }
+
+.header.mainHeader .linksContainer {
+    width: 100%;
+}
