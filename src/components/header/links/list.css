@@ -7,6 +7,6 @@ ul.headerLinksList {
 li.headerLinksListLi {
     min-height: 53px;
     display: inline-block;
-    line-height: 80px;
+    line-height: 70px;
     flex-wrap: wrap;
 }
