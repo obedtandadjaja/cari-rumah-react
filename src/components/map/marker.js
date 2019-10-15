@@ -4,9 +4,14 @@ import './marker.css'
 import { convertToPriceShort } from './../../helpers/priceUtil'
 
 function MapMarker(props) {
+  function markerOnClick(event) {
+    window.open(`/listing?id=${event.target.id.replace('listing_marker_', '')}`)
+  }
+
   return (
     <div
       id={ `listing_marker_${props.listingId}` }
+      onClick={markerOnClick}
       className='mapMarker'>
       {
         props.listingPriceIdr &&

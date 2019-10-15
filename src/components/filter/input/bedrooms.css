@@ -16,6 +16,10 @@
     cursor: pointer;
 }
 
+.pill:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
 .pill.selected {
     background-color: #006AFF;
     border-color: #006AFF;

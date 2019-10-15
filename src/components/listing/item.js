@@ -16,11 +16,21 @@ function ListingItem(props) {
     listingMarker.classList.toggle('selected')
   }
 
+  function listingOnClick(event) {
+    let element = event.target
+    while (element.className !== 'listingItem') {
+      element = element.parentNode
+    }
+
+    window.open(`/listing?id=${element.id}`)
+  }
+
   return (
     <div className='listingItem'
       id={props.listing.id}
       onMouseEnter={toggleListingHover}
-      onMouseLeave={toggleListingHover}>
+      onMouseLeave={toggleListingHover}
+      onClick={listingOnClick}>
       <ListingItemPicture picture_url={props.listing.display_picture_url} />
       <div className='listingItemBody'>
         <span className='listingItemPrice'>{convertToPrice(props.listing.price_idr)}</span>
