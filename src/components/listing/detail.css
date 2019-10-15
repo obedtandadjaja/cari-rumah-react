@@ -5,6 +5,7 @@
     align-items: center;
     flex-direction: column;
     overflow-y: scroll;
+    margin-bottom: 20px;
 }
 
 .listingDetailBody {
@@ -52,4 +53,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 600px) {
+    .image-gallery-slide {
+        height: 300px;
+    }
 }

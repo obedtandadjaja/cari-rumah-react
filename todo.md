@@ -6,7 +6,6 @@ ListingDetail:
 - show similar listings
 - mobile support
 - Add additional information
-- Add map of where it is
 - Save listing
 
 Search:
