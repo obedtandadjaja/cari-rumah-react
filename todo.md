@@ -8,9 +8,6 @@ ListingDetail:
 - Add additional information
 - Save listing
 
-Search:
-- move autocomplete to header
-
 Features:
 - Login/Logout
 - Signup
