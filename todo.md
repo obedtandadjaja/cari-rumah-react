@@ -13,3 +13,7 @@ Features:
 - Signup
 - Create listing
 - Save search
+
+security:
+- csrf token
+- hash or encrypt graphql
