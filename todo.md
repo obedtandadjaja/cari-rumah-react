@@ -17,3 +17,7 @@ Features:
 security:
 - csrf token
 - hash or encrypt graphql
+
+optimization:
+- graphql client caching
+- marker and listing caching

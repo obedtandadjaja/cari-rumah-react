@@ -25,7 +25,7 @@ const userLinks = [
     text: 'Advertise'
   },
   {
-    url: '#',
+    url: '/account/profile',
     text: 'Akun'
   }
 ]

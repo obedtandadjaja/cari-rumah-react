@@ -8,7 +8,7 @@ function FilterPopover(props) {
   useEffect(() => {
     if(window.innerWidth <= refComponent.current.getBoundingClientRect().right)
       refComponent.current.style.right = 0
-  }, [refComponent, window.innerWidth])
+  }, [refComponent])
 
   return (
     <div
