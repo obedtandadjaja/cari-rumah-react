@@ -1,25 +1,24 @@
 import React from 'react'
 import { useQuery } from 'react-apollo'
 import { BarLoader } from 'react-spinners'
-import { useHistory } from 'react-router-dom'
 
 import './settings.css'
 import { USER_ACCOUNT_SETTINGS } from './../../graphqlQuery'
+import handleError from './../../helpers/errorHandler'
 
 function AccountSettings(props) {
-  let history = useHistory()
   const { loading, error, data } = useQuery(
     USER_ACCOUNT_SETTINGS,
     {
       variables: {
-        id: 1
+        id: "asb"
       }
     }
   )
 
   let notificationMethods = []
   if (error) {
-    history.push('/error')
+    handleError(error)
   } else if (data) {
     if (data.user.email) notificationMethods.push('Email')
     if (data.user.phone) notificationMethods.push('SMS')

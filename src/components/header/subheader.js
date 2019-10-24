@@ -7,14 +7,14 @@ function Subheader(props) {
   let items = []
   props.items.forEach((item, i) => {
     items.push(
-      <div
-        key={`subheaderItem${i}`}
-        className={ `subheaderItem ${item.selected ? 'selected' : ''}` }
-        {...item}>
-        <Link to={{pathname: item.destination}}>
+      <Link to={{pathname: item.destination}}>
+        <div
+          key={`subheaderItem${i}`}
+          className={ `subheaderItem ${item.selected ? 'selected' : ''}` }
+          {...item}>
           { item.text }
-        </Link>
-      </div>
+        </div>
+      </Link>
     )
   })
 

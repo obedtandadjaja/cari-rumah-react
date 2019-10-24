@@ -18,9 +18,5 @@
 
 .subheaderItem:hover {
     background-color: rgba(0,0,0,0.05);
-}
-
-.subheaderItem > a {
-    color: rgb(0,0,0);
-    text-decoration: none;
+    border-bottom: solid 3px rgba(0,0,0,0.15);
 }
