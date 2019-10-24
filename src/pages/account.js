@@ -1,7 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 
-import Profile from './account/profile'
+import './account.css'
+import AccountSettings from './account/settings'
 import Subheader from './../components/header/subheader'
 
 function AccountPages(props) {
@@ -17,9 +18,9 @@ function AccountPages(props) {
       selected: subheaderItemSelected('/account/saved-searches'),
     },
     {
-      text: 'Profil',
-      destination: '/account/profile',
-      selected: subheaderItemSelected('/account/profile'),
+      text: 'Pengaturan',
+      destination: '/account/settings',
+      selected: subheaderItemSelected('/account/settings'),
     },
   ]
 
@@ -30,11 +31,9 @@ function AccountPages(props) {
   return (
     <div className='accountPage'>
       <Subheader items={subheaderItems} />
-      <BrowserRouter>
-        <Route path='/saved-listings' component={Profile} />
-        <Route path='/saved-searches' component={Profile} />
-        <Route path='/profile' component={Profile} />
-      </BrowserRouter>
+      <Route path={`${props.match.path}/saved-listings`} component={AccountSettings} />
+      <Route path={`${props.match.path}/saved-searches`} component={AccountSettings} />
+      <Route path={`${props.match.path}/settings`} component={AccountSettings} />
     </div>
   )
 }
