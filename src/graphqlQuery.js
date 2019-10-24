@@ -1,5 +1,17 @@
 import gql from 'graphql-tag'
 
+export const USER_ACCOUNT_SETTINGS = gql`
+  query userAccount($id: ID!) {
+    user(id: $id) {
+      id
+      name
+      email
+      phone
+      notification_methods
+    }
+  }
+`
+
 export const QUERY_LISTING_BY_ID = gql`
     query listing($id: ID!) {
       listing(id: $id) {

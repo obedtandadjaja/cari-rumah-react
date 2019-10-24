@@ -9,7 +9,7 @@
     background-color: rgb(255,255,255);
 }
 
-table.formTable > tr > td:nth-child(odd) {
+table.formTable > tbody > tr > td:nth-child(odd) {
     width: 1%;
     white-space: nowrap;
     padding: 5px 10px 5px 0;
