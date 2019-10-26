@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './error.css'
+
 function ErrorPage(props) {
   return (
     <div className='errorPage'>
