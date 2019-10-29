@@ -1,55 +1,64 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import './autocomplete.css'
 import { getAutocompletePredictions } from './../../api/autocomplete'
 import PredictionsContainer from './predictions/container'
+import OutsideClickNotifier from './../../highOrderComponents/outsideClickNotifier'
 
-class Autocomplete extends React.Component {
-  state = {
+function Autocomplete(props) {
+  const defaultState = {
     text: '',
     typing: false,
-    typingTimeout: 0
+    typingTimeout: 0,
+    visible: false
   }
 
-  onChange = (event) => {
-    if (this.state.typingTimeout) {
-      clearTimeout(this.state.typingTimeout)
+  const refComponent = useRef()
+  const [typingState, setTypingState] = useState(defaultState)
+  OutsideClickNotifier(
+    (event) => setTypingState(defaultState),
+    refComponent
+  )
+
+  const onChange = (event) => {
+    if (typingState.typingTimeout) {
+      clearTimeout(typingState.typingTimeout)
     }
 
-    this.setState({
+    setTypingState({
       text: event.target.value,
       typing: false,
       typingTimeout: setTimeout(() => {
-        if (this.state.text !== '') {
-          this.props.getAutocompletePredictions(this.state.text)
+        if (typingState.text !== '') {
+          props.getAutocompletePredictions(typingState.text)
         }
-      }, 400)
+      }, 400),
+      visible: event.target.value
     })
   }
 
-  constructor(props) {
-    super(props)
-
-    this.onChange = this.onChange.bind(this)
+  const onFocus = (event) => {
+    setTypingState({ ...typingState, visible: true })
   }
 
-  render() {
-    return (
-      <div>
-        <input className={this.props.mini ? 'autocomplete mini' : 'autocomplete'} type='text' placeholder='Cari alamat, daerah, kota, atau kode ZIP'
-          onChange={this.onChange} />
-        <br />
-        {
-          !this.props.autocompletePredictionsLoading &&
-          !this.props.autocompletePredictionsError &&
-          this.state.text &&
-          <PredictionsContainer predictions={this.props.autocompletePredictions} mini={this.props.mini} />
-        }
-      </div>
-    )
-  }
+  return (
+    <div ref={refComponent}>
+      <input
+        className={props.mini ? 'autocomplete mini' : 'autocomplete'} type='text' placeholder='Cari alamat, daerah, kota, atau kode ZIP'
+        onChange={onChange}
+        onFocus={onFocus}
+      />
+      <br />
+      {
+        !props.autocompletePredictionsLoading &&
+        !props.autocompletePredictionsError &&
+        typingState.visible &&
+        <PredictionsContainer predictions={props.autocompletePredictions} mini={props.mini} />
+      }
+    </div>
+  )
 }
 
 const mapStateToProps = state => ({
